@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+
+body{
+background:#000;
+color:white;
+font-family:Arial;
+padding:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#00e5ff;
+border:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Create Tournament</h2>
+
+<select id="game">
+<option value="freefire">Free Fire</option>
+<option value="scarfall">ScarFall</option>
+</select>
+
+<select id="mode">
+<option value="fullmap">Full Map</option>
+<option value="cs">Clash Squad</option>
+<option value="lonewolf">Lone Wolf</option>
+</select>
+
+<input id="entry" placeholder="Entry Fee">
+
+<input id="prize" placeholder="Prize Pool">
+
+<input id="time" placeholder="Match Time">
+
+<button onclick="createTournament()">Create</button>
+
+<script>
+
+function createTournament(){
+
+let game=document.getElementById("game").value
+let mode=document.getElementById("mode").value
+let entry=document.getElementById("entry").value
+let prize=document.getElementById("prize").value
+let time=document.getElementById("time").value
+
+let data={
+game,
+mode,
+entry,
+prize,
+time
+}
+
+console.log(data)
+
+alert("Tournament Created")
+
+}
+
+</script>
+
+</body>
+</html>
