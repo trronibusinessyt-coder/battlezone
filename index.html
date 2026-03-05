@@ -12,7 +12,7 @@
 </head>
 
 
-<body>
+<body onload="loadTournaments()">
 
 
 <!-- TOP BAR -->
@@ -36,7 +36,7 @@
 
 <div class="wallet">
 
-<span>₹0.00</span>
+<span id="topBalance">₹0.00</span>
 
 <button onclick="location.href='wallet.html'">+</button>
 
@@ -140,6 +140,14 @@
 
 
 
+<!-- TOURNAMENT SECTION -->
+
+<h3 class="section-title">TOURNAMENTS</h3>
+
+<div id="tournamentList"></div>
+
+
+
 <!-- MY CONTEST -->
 
 <h3 class="section-title">MY CONTESTS</h3>
@@ -205,7 +213,7 @@
 </div>
 
 
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 
 </body>
