@@ -1,15 +1,23 @@
 /* ================= FIREBASE CONFIG ================= */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+import { 
+getFirestore,
+collection,
+getDocs,
+doc,
+getDoc,
+setDoc
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
-  authDomain: "battlezone-c7406.firebaseapp.com",
-  projectId: "battlezone-c7406",
-  storageBucket: "battlezone-c7406.firebasestorage.app",
-  messagingSenderId: "237634131988",
-  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.firebasestorage.app",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -227,7 +235,7 @@ let selectedSlot=null;
 
 
 
-function loadSlots(){
+async function loadSlots(){
 
 let grid=document.getElementById("slotGrid");
 
@@ -235,10 +243,26 @@ if(!grid) return;
 
 grid.innerHTML="";
 
+let matchId=localStorage.getItem("matchId");
+
+const ref=doc(db,"joins",matchId);
+
+const snap=await getDoc(ref);
+
+let taken={};
+
+if(snap.exists()){
+taken=snap.data();
+}
+
 for(let i=1;i<=48;i++){
 
+let takenClass=taken[i] ? "taken" : "";
+
 grid.innerHTML+=`
-<div class="slot" onclick="selectSlot(${i})" id="slot${i}">
+<div class="slot ${takenClass}" 
+onclick="selectSlot(${i})" 
+id="slot${i}">
 ${i}
 </div>
 `;
@@ -251,37 +275,48 @@ ${i}
 
 function selectSlot(num){
 
+let slot=document.getElementById("slot"+num);
+
+if(slot.classList.contains("taken")){
+alert("Slot Already Taken");
+return;
+}
+
 selectedSlot=num;
 
 document.querySelectorAll(".slot").forEach(s=>{
 s.classList.remove("active");
 });
 
-document.getElementById("slot"+num).classList.add("active");
+slot.classList.add("active");
 
 }
 
 
 
-function confirmJoin(){
+async function confirmJoin(){
 
 let name=document.getElementById("playerName").value;
 
 if(!selectedSlot){
-
 alert("Select Position");
 return;
-
 }
 
 if(!name){
-
 alert("Enter Game Name");
 return;
-
 }
 
-alert("Joined Slot "+selectedSlot+" Successfully!");
+let matchId=localStorage.getItem("matchId");
+
+const ref=doc(db,"joins",matchId);
+
+await setDoc(ref,{
+[selectedSlot]:name
+},{merge:true});
+
+alert("Joined Successfully!");
 
 window.location.href="index.html";
 
