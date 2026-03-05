@@ -1,92 +1,287 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0a0f1c;
-  color: white;
+body{
+margin:0;
+font-family:Arial;
+background:#0a0f1c;
+color:white;
+padding-bottom:80px;
 }
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  background: #111a2e;
+
+/* TOP BAR */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:#111a2e;
 }
 
-.wallet-box {
-  background: #7b2ff7;
-  padding: 8px 15px;
-  border-radius: 20px;
+.profile{
+display:flex;
+align-items:center;
 }
 
-.banner {
-  background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-  padding: 20px;
-  text-align: center;
-  margin: 15px;
-  border-radius: 12px;
+.profile img{
+width:40px;
+height:40px;
+border-radius:50%;
+margin-right:10px;
 }
 
-.quick-menu {
-  display: flex;
-  justify-content: space-around;
-  margin: 15px 0;
+.wallet{
+display:flex;
+align-items:center;
 }
 
-.quick-card {
-  background: #1c2541;
-  padding: 15px;
-  border-radius: 12px;
-  width: 22%;
-  text-align: center;
-  font-size: 14px;
+.wallet span{
+background:#7b2ff7;
+padding:8px 15px;
+border-radius:20px;
+margin-right:10px;
 }
 
-.section-title {
-  margin-left: 15px;
+.wallet button{
+background:#00c6ff;
+border:none;
+padding:6px 12px;
+border-radius:10px;
 }
 
-.card {
-  background: linear-gradient(135deg, #1c2541, #3a0ca3);
-  margin: 15px;
-  padding: 15px;
-  border-radius: 12px;
+
+/* RULES */
+
+.rules{
+background:#1c2541;
+padding:10px;
+text-align:center;
+font-size:14px;
 }
 
-.card button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background: #00c6ff;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
+
+/* MAIN BANNER */
+
+.main-banner{
+margin:15px;
 }
 
-.contest-menu {
-  display: flex;
-  justify-content: space-around;
-  margin: 15px 0;
+.main-banner img{
+width:100%;
+border-radius:12px;
 }
 
-.contest-card {
-  background: #1c2541;
-  padding: 20px;
-  border-radius: 12px;
-  width: 28%;
-  text-align: center;
+
+/* QUICK MENU */
+
+.quick-menu{
+display:flex;
+justify-content:space-around;
+margin:15px 0;
 }
 
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #111a2e;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
+.quick-btn{
+background:#1c2541;
+padding:15px;
+border-radius:12px;
+width:22%;
+text-align:center;
+font-size:14px;
 }
 
-.bottom-nav a {
-  color: white;
-  text-decoration: none;
+.quick-btn span{
+font-size:20px;
+display:block;
+margin-bottom:5px;
+}
+
+
+/* SECTION TITLE */
+
+.section-title{
+margin-left:15px;
+margin-top:20px;
+}
+
+
+/* EXCLUSIVE GAME BANNERS */
+
+.exclusive{
+display:flex;
+overflow:auto;
+gap:10px;
+padding:10px;
+}
+
+.game-banner{
+background:#1c2541;
+border-radius:12px;
+min-width:220px;
+position:relative;
+}
+
+.game-banner img{
+width:100%;
+border-radius:12px;
+}
+
+.fair{
+position:absolute;
+top:5px;
+left:5px;
+background:#00c6ff;
+color:black;
+padding:3px 8px;
+border-radius:8px;
+font-size:12px;
+}
+
+.play{
+position:absolute;
+bottom:10px;
+right:10px;
+background:#7b2ff7;
+border:none;
+padding:6px 12px;
+border-radius:8px;
+color:white;
+}
+
+
+/* TOURNAMENT CARD */
+
+.card{
+background:linear-gradient(135deg,#1c2541,#3a0ca3);
+margin:15px;
+padding:15px;
+border-radius:12px;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.card h3{
+margin:5px 0;
+}
+
+.card p{
+font-size:14px;
+margin:3px 0;
+}
+
+.card button{
+width:100%;
+padding:10px;
+margin-top:10px;
+background:#00c6ff;
+border:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+
+/* MY CONTEST */
+
+.contest-menu{
+display:flex;
+justify-content:space-around;
+margin:15px 0;
+}
+
+.contest-card{
+background:#1c2541;
+padding:20px;
+border-radius:12px;
+width:28%;
+text-align:center;
+}
+
+
+/* SHARE BUTTON */
+
+.share{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:15px;
+}
+
+.share button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+}
+
+.whatsapp{
+background:#25d366;
+color:white;
+}
+
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:#111a2e;
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+}
+
+.bottom-nav button{
+background:none;
+border:none;
+color:white;
+font-size:14px;
+}
+
+.bottom-nav .active{
+color:#00c6ff;
+}
+
+
+/* MATCH PAGE */
+
+.match-banner img{
+width:100%;
+border-radius:10px;
+}
+
+.match-info{
+padding:15px;
+}
+
+.rules-box{
+background:#1c2541;
+margin:15px;
+padding:15px;
+border-radius:12px;
+}
+
+.rules-box h3{
+margin-top:0;
+}
+
+.rules-box ul{
+padding-left:20px;
+}
+
+.join-box{
+position:fixed;
+bottom:60px;
+width:100%;
+text-align:center;
+}
+
+.join-btn{
+background:#00c6ff;
+border:none;
+padding:15px 40px;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
 }
