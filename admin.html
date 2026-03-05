@@ -1,0 +1,68 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore, collection, addDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.firebasestorage.app",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+/* CREATE TOURNAMENT */
+
+window.createTournament = async function(){
+
+let game = document.getElementById("game").value;
+
+let map = document.getElementById("map").value;
+
+let entry = Number(document.getElementById("entry").value);
+
+let prize = Number(document.getElementById("prize").value);
+
+let slots = Number(document.getElementById("slots").value);
+
+await addDoc(collection(db,"tournaments"),{
+
+game:game,
+map:map,
+entryFee:entry,
+prizePool:prize,
+slots:slots,
+joined:0,
+status:"open"
+
+});
+
+alert("Tournament Created");
+
+}
+
+/* ADD ROOM ID */
+
+window.addRoom = async function(){
+
+let id = document.getElementById("matchId").value;
+
+let roomId = document.getElementById("roomId").value;
+
+let password = document.getElementById("password").value;
+
+const ref = doc(db,"tournaments",id);
+
+await updateDoc(ref,{
+
+roomId:roomId,
+password:password
+
+});
+
+alert("Room Added");
+
+}

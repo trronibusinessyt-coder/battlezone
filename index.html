@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BattleZone Esports</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadTournaments()">
+
+<div class="top-bar">
+  <div>
+    <h3>BattleZone</h3>
+    <small>GAME VICTORY</small>
+  </div>
+  <div class="wallet-box">
+    Rs <span id="topBalance">0</span>
+  </div>
+</div>
+
+<div class="banner">
+  <h2>🔥 Welcome to BattleZone Esports</h2>
+</div>
+
+<div class="quick-menu">
+  <div class="quick-card">Support</div>
+  <div class="quick-card">Whatsapp</div>
+  <div class="quick-card">Youtube</div>
+  <div class="quick-card" onclick="window.location.href='wallet.html'">Wallet</div>
+</div>
+
+<h3 class="section-title">🔥 Live Contests</h3>
+<div id="tournamentList"></div>
+
+<h3 class="section-title">🎮 My Contests</h3>
+<div class="contest-menu">
+  <div class="contest-card">Upcoming</div>
+  <div class="contest-card">Ongoing</div>
+  <div class="contest-card">Completed</div>
+</div>
+
+<div class="bottom-nav">
+  <a href="index.html">Home</a>
+  <a href="wallet.html">Wallet</a>
+  <a href="#">Rank</a>
+  <a href="#" onclick="logout()">Profile</a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

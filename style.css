@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0a0f1c;
+  color: white;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: #111a2e;
+}
+
+.wallet-box {
+  background: #7b2ff7;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.banner {
+  background: linear-gradient(90deg, #7b2ff7, #00c6ff);
+  padding: 20px;
+  text-align: center;
+  margin: 15px;
+  border-radius: 12px;
+}
+
+.quick-menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.quick-card {
+  background: #1c2541;
+  padding: 15px;
+  border-radius: 12px;
+  width: 22%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.section-title {
+  margin-left: 15px;
+}
+
+.card {
+  background: linear-gradient(135deg, #1c2541, #3a0ca3);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #00c6ff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.contest-menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.contest-card {
+  background: #1c2541;
+  padding: 20px;
+  border-radius: 12px;
+  width: 28%;
+  text-align: center;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #111a2e;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav a {
+  color: white;
+  text-decoration: none;
+}
