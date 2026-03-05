@@ -336,3 +336,12 @@ font-weight:bold;
 background:red;
 pointer-events:none;
 }
+
+.member{
+background:#1c2541;
+margin:10px 15px;
+padding:10px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+}
