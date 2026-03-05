@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
+
 /* ================= USER SYSTEM ================= */
 
 function signup(){
@@ -156,8 +157,6 @@ if(!user) return;
 
 
 
-// wallet show
-
 let topBal=document.getElementById("topBalance");
 
 if(topBal){
@@ -222,6 +221,74 @@ window.location.href="match.html";
 
 
 
+/* ================= SLOT SYSTEM ================= */
+
+let selectedSlot=null;
+
+
+
+function loadSlots(){
+
+let grid=document.getElementById("slotGrid");
+
+if(!grid) return;
+
+grid.innerHTML="";
+
+for(let i=1;i<=48;i++){
+
+grid.innerHTML+=`
+<div class="slot" onclick="selectSlot(${i})" id="slot${i}">
+${i}
+</div>
+`;
+
+}
+
+}
+
+
+
+function selectSlot(num){
+
+selectedSlot=num;
+
+document.querySelectorAll(".slot").forEach(s=>{
+s.classList.remove("active");
+});
+
+document.getElementById("slot"+num).classList.add("active");
+
+}
+
+
+
+function confirmJoin(){
+
+let name=document.getElementById("playerName").value;
+
+if(!selectedSlot){
+
+alert("Select Position");
+return;
+
+}
+
+if(!name){
+
+alert("Enter Game Name");
+return;
+
+}
+
+alert("Joined Slot "+selectedSlot+" Successfully!");
+
+window.location.href="index.html";
+
+}
+
+
+
 /* ================= GLOBAL FUNCTIONS ================= */
 
 window.loadTournaments=loadTournaments;
@@ -231,3 +298,6 @@ window.logout=logout;
 window.loadWallet=loadWallet;
 window.addMoney=addMoney;
 window.openMatch=openMatch;
+window.loadSlots=loadSlots;
+window.selectSlot=selectSlot;
+window.confirmJoin=confirmJoin;
