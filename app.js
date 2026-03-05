@@ -326,13 +326,50 @@ window.location.href="index.html";
 
 /* ================= GLOBAL FUNCTIONS ================= */
 
-window.loadTournaments=loadTournaments;
-window.signup=signup;
-window.login=login;
-window.logout=logout;
-window.loadWallet=loadWallet;
-window.addMoney=addMoney;
-window.openMatch=openMatch;
-window.loadSlots=loadSlots;
-window.selectSlot=selectSlot;
-window.confirmJoin=confirmJoin;
+window.loadTournaments = loadTournaments;
+window.signup = signup;
+window.login = login;
+window.logout = logout;
+window.loadWallet = loadWallet;
+window.addMoney = addMoney;
+window.openMatch = openMatch;
+window.loadSlots = loadSlots;
+window.selectSlot = selectSlot;
+window.confirmJoin = confirmJoin;
+window.loadMembers = loadMembers;
+
+
+/* ================= LOAD JOINED MEMBERS ================= */
+
+async function loadMembers(){
+
+let list = document.getElementById("memberList");
+
+if(!list) return;
+
+list.innerHTML = "";
+
+let matchId = localStorage.getItem("matchId");
+
+const ref = doc(db,"joins",matchId);
+
+const snap = await getDoc(ref);
+
+if(!snap.exists()) return;
+
+let data = snap.data();
+
+Object.keys(data).forEach(slot=>{
+
+list.innerHTML += `
+
+<div class="member">
+<span>Slot ${slot}</span>
+<span>${data[slot]}</span>
+</div>
+
+`;
+
+});
+
+}
