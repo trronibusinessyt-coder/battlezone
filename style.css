@@ -331,3 +331,8 @@ border-radius:8px;
 color:white;
 font-weight:bold;
 }
+
+.slot.taken{
+background:red;
+pointer-events:none;
+}
