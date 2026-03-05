@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Match Details</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+<button onclick="history.back()">⬅</button>
+
+<h3>Match Details</h3>
+
+</div>
+
+
+<!-- MATCH BANNER -->
+
+<div class="match-banner">
+
+<img id="matchBanner" src="">
+
+</div>
+
+
+<!-- MATCH INFO -->
+
+<div class="match-info">
+
+<h2 id="matchMode"></h2>
+
+<p>Entry Fee : ₹<span id="matchEntry"></span></p>
+
+<p>Prize : ₹<span id="matchPrize"></span></p>
+
+<p>Slots : <span id="matchSlots"></span></p>
+
+<p>Time : <span id="matchTime"></span></p>
+
+</div>
+
+
+<!-- RULES -->
+
+<div class="rules-box">
+
+<h3>Rules and Regulations</h3>
+
+<ul>
+
+<li>Hack Not Allowed</li>
+
+<li>Teaming Not Allowed</li>
+
+<li>Use Only Registered Game ID</li>
+
+<li>Breaking rules will result in ban</li>
+
+</ul>
+
+</div>
+
+
+<!-- JOIN BUTTON -->
+
+<div class="join-box">
+
+<button class="join-btn">JOIN NOW</button>
+
+</div>
+
+
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+  authDomain: "battlezone-c7406.firebaseapp.com",
+  projectId: "battlezone-c7406",
+  storageBucket: "battlezone-c7406.firebasestorage.app",
+  messagingSenderId: "237634131988",
+  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+async function loadMatch(){
+
+let matchId = localStorage.getItem("matchId");
+
+const docRef = doc(db,"tournaments",matchId);
+
+const docSnap = await getDoc(docRef);
+
+if(docSnap.exists()){
+
+let data = docSnap.data();
+
+document.getElementById("matchBanner").src = data.banner;
+
+document.getElementById("matchMode").innerText = data.mode;
+
+document.getElementById("matchEntry").innerText = data.entry;
+
+document.getElementById("matchPrize").innerText = data.prize;
+
+document.getElementById("matchSlots").innerText = data.slots;
+
+document.getElementById("matchTime").innerText = data.time;
+
+}
+
+}
+
+loadMatch();
+
+</script>
+
+
+</body>
+
+</html>
