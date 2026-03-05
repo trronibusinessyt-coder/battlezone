@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Position</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="loadSlots()">
+
+<div class="topbar">
+<button onclick="history.back()">⬅</button>
+<h3>Select Position</h3>
+</div>
+
+<div class="slot-grid" id="slotGrid"></div>
+
+<div class="join-form">
+
+<input type="text" id="playerName" placeholder="Enter Game Name">
+
+<button onclick="confirmJoin()">JOIN MATCH</button>
+
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+
+</html>
