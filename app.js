@@ -1,165 +1,221 @@
+// ================= FIREBASE CONFIG =================
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+  authDomain: "battlezone-c7406.firebaseapp.com",
+  projectId: "battlezone-c7406",
+  storageBucket: "battlezone-c7406.firebasestorage.app",
+  messagingSenderId: "237634131988",
+  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
 // ================= USER SYSTEM =================
 
 function signup() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
 
-  if (!name || !email || !password) {
-    alert("Fill all fields");
-    return;
-  }
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
 
-  let user = {
-    name: name,
-    email: email,
-    password: password,
-    wallet: 0,
-    transactions: []
-  };
-
-  localStorage.setItem("battlezoneUser", JSON.stringify(user));
-  alert("Account Created Successfully!");
-  window.location.href = "login.html";
+if (!name || !email || !password) {
+alert("Fill all fields");
+return;
 }
+
+let user = {
+name: name,
+email: email,
+password: password,
+wallet: 0,
+transactions: []
+};
+
+localStorage.setItem("battlezoneUser", JSON.stringify(user));
+
+alert("Account Created Successfully!");
+
+window.location.href = "login.html";
+
+}
+
+
 
 function login() {
-  let email = document.getElementById("loginEmail").value;
-  let password = document.getElementById("loginPassword").value;
 
-  let user = JSON.parse(localStorage.getItem("battlezoneUser"));
+let email = document.getElementById("loginEmail").value;
+let password = document.getElementById("loginPassword").value;
 
-  if (!user || email !== user.email || password !== user.password) {
-    alert("Invalid Login");
-    return;
-  }
+let user = JSON.parse(localStorage.getItem("battlezoneUser"));
 
-  localStorage.setItem("isLoggedIn", "true");
-  window.location.href = "index.html";
+if (!user || email !== user.email || password !== user.password) {
+alert("Invalid Login");
+return;
 }
 
-function checkLogin() {
-  if (localStorage.getItem("isLoggedIn") !== "true") {
-    window.location.href = "login.html";
-  }
+localStorage.setItem("isLoggedIn","true");
+
+window.location.href = "index.html";
+
 }
+
+
 
 function logout() {
-  localStorage.removeItem("isLoggedIn");
-  window.location.href = "login.html";
+
+localStorage.removeItem("isLoggedIn");
+
+window.location.href="login.html";
+
 }
+
+
+
+function checkLogin(){
+
+if(localStorage.getItem("isLoggedIn") !== "true"){
+
+window.location.href="login.html";
+
+}
+
+}
+
 
 
 // ================= WALLET SYSTEM =================
 
-function loadWallet() {
-  checkLogin();
+function loadWallet(){
 
-  let user = JSON.parse(localStorage.getItem("battlezoneUser"));
-  if (!user) return;
+checkLogin();
 
-  document.getElementById("username").innerText = user.name;
-  document.getElementById("balance").innerText = "Rs " + user.wallet;
+let user = JSON.parse(localStorage.getItem("battlezoneUser"));
 
-  let history = document.getElementById("history");
-  history.innerHTML = "";
+if(!user) return;
 
-  user.transactions.forEach(function(t) {
-    history.innerHTML += "<p>" + t + "</p>";
-  });
-}
+document.getElementById("username").innerText = user.name;
 
-function addMoney() {
-  let amount = parseInt(document.getElementById("amount").value);
+document.getElementById("balance").innerText = "Rs "+user.wallet;
 
-  if (!amount || amount <= 0) {
-    alert("Enter valid amount");
-    return;
-  }
+let history = document.getElementById("history");
 
-  let user = JSON.parse(localStorage.getItem("battlezoneUser"));
+history.innerHTML="";
 
-  user.wallet += amount;
-  user.transactions.push("Added Rs " + amount);
+user.transactions.forEach(function(t){
 
-  localStorage.setItem("battlezoneUser", JSON.stringify(user));
+history.innerHTML += "<p>"+t+"</p>";
 
-  alert("Money Added Successfully!");
-  loadWallet();
+});
+
 }
 
 
-// ================= TOURNAMENT SYSTEM =================
 
-// Tournament Data
-let tournaments = [
-  { id: 1, name: "Solo Classic", fee: 20, prize: 200, totalSlots: 50, joined: 0 },
-  { id: 2, name: "Duo Battle", fee: 40, prize: 400, totalSlots: 30, joined: 0 },
-  { id: 3, name: "Squad War", fee: 80, prize: 800, totalSlots: 25, joined: 0 }
-];
+function addMoney(){
 
-function loadTournaments() {
-  checkLogin();
+let amount = parseInt(document.getElementById("amount").value);
 
-  let user = JSON.parse(localStorage.getItem("battlezoneUser"));
-  if (!user) return;
+if(!amount || amount<=0){
 
-  // Top Wallet Update
-  let topBal = document.getElementById("topBalance");
-  if (topBal) {
-    topBal.innerText = user.wallet;
-  }
+alert("Enter valid amount");
 
-  let container = document.getElementById("tournamentList");
-  if (!container) return;
+return;
 
-  container.innerHTML = "";
-
-  tournaments.forEach(function(t) {
-
-    let slotsLeft = t.totalSlots - t.joined;
-
-    container.innerHTML += `
-      <div class="card">
-        <h3>${t.name}</h3>
-        <p>Entry Fee: Rs ${t.fee}</p>
-        <p>Prize: Rs ${t.prize}</p>
-        <p>Joined: ${t.joined} / ${t.totalSlots}</p>
-        <p>Slots Left: ${slotsLeft}</p>
-        <button onclick="joinTournament(${t.id})"
-        ${slotsLeft === 0 ? "disabled" : ""}>
-        ${slotsLeft === 0 ? "Full" : "Join Now"}
-        </button>
-      </div>
-    `;
-  });
 }
 
-function joinTournament(id) {
+let user = JSON.parse(localStorage.getItem("battlezoneUser"));
 
-  let user = JSON.parse(localStorage.getItem("battlezoneUser"));
-  if (!user) return;
+user.wallet += amount;
 
-  let tournament = tournaments.find(t => t.id === id);
-  if (!tournament) return;
+user.transactions.push("Added Rs "+amount);
 
-  if (user.wallet < tournament.fee) {
-    alert("Insufficient Balance!");
-    return;
-  }
+localStorage.setItem("battlezoneUser",JSON.stringify(user));
 
-  if (tournament.joined >= tournament.totalSlots) {
-    alert("Tournament Full!");
-    return;
-  }
+alert("Money Added Successfully!");
 
-  user.wallet -= tournament.fee;
-  user.transactions.push("Joined " + tournament.name + " - Rs " + tournament.fee);
+loadWallet();
 
-  tournament.joined++;
-
-  localStorage.setItem("battlezoneUser", JSON.stringify(user));
-
-  alert("Joined " + tournament.name + " Successfully!");
-  loadTournaments();
 }
+
+
+
+// ================= FIREBASE TOURNAMENT LOAD =================
+
+async function loadTournaments(){
+
+checkLogin();
+
+let user = JSON.parse(localStorage.getItem("battlezoneUser"));
+
+if(!user) return;
+
+
+
+// top wallet
+
+let topBal = document.getElementById("topBalance");
+
+if(topBal){
+
+topBal.innerText = user.wallet;
+
+}
+
+
+
+// tournament list
+
+let container = document.getElementById("tournamentList");
+
+if(!container) return;
+
+container.innerHTML="";
+
+
+
+const querySnapshot = await getDocs(collection(db,"tournaments"));
+
+querySnapshot.forEach((doc)=>{
+
+let t = doc.data();
+
+container.innerHTML += `
+
+<div class="card">
+
+<img src="${t.banner}" style="width:100%;border-radius:10px">
+
+<h3>${t.mode.toUpperCase()}</h3>
+
+<p>Entry Fee : Rs ${t.entry}</p>
+
+<p>Prize : Rs ${t.prize}</p>
+
+<p>Time : ${t.time}</p>
+
+<p>Slots : ${t.slots}</p>
+
+<button>Join</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+
+window.loadTournaments = loadTournaments;
+window.signup = signup;
+window.login = login;
+window.logout = logout;
+window.loadWallet = loadWallet;
+window.addMoney = addMoney;
