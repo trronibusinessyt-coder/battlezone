@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Victory</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+background:#000;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+.header{
+display:flex;
+align-items:center;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+color:#00e5ff;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+padding:15px;
+}
+
+.card{
+background:#111;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,255,255,0.2);
+}
+
+.card img{
+width:100%;
+height:120px;
+object-fit:cover;
+}
+
+.card-title{
+background:#00d2d3;
+color:black;
+padding:8px;
+text-align:center;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+← Game Victory
+</div>
+
+<div class="grid">
+
+<div class="card" onclick="openMode('fullmap')">
+<img src="images/fullmap.jpg">
+<div class="card-title">FULL MAP</div>
+</div>
+
+<div class="card" onclick="openMode('survival')">
+<img src="images/survival.jpg">
+<div class="card-title">SURVIVAL</div>
+</div>
+
+<div class="card" onclick="openMode('fullmap2')">
+<img src="images/fullmap2.jpg">
+<div class="card-title">FULL MAP 2</div>
+</div>
+
+<div class="card" onclick="openMode('lw1v1')">
+<img src="images/lw1v1.jpg">
+<div class="card-title">LONE WOLF 1V1</div>
+</div>
+
+<div class="card" onclick="openMode('lw2v2')">
+<img src="images/lw2v2.jpg">
+<div class="card-title">LONE WOLF 2V2</div>
+</div>
+
+<div class="card" onclick="openMode('losstowin')">
+<img src="images/loss.jpg">
+<div class="card-title">LOSS TO WIN</div>
+</div>
+
+<div class="card" onclick="openMode('cs1v1')">
+<img src="images/cs1v1.jpg">
+<div class="card-title">CS 1V1</div>
+</div>
+
+<div class="card" onclick="openMode('cs2v2')">
+<img src="images/cs2v2.jpg">
+<div class="card-title">CS 2V2</div>
+</div>
+
+<div class="card" onclick="openMode('cs4v4')">
+<img src="images/cs4v4.jpg">
+<div class="card-title">CS 4V4</div>
+</div>
+
+<div class="card" onclick="openMode('lowentry')">
+<img src="images/lowentry.jpg">
+<div class="card-title">LOW ENTRY</div>
+</div>
+
+<div class="card" onclick="openMode('free')">
+<img src="images/free.jpg">
+<div class="card-title">FREE MATCHES</div>
+</div>
+
+<div class="card" onclick="openMode('night')">
+<img src="images/night.jpg">
+<div class="card-title">NIGHT MODE</div>
+</div>
+
+</div>
+
+<script>
+
+function openMode(mode){
+localStorage.setItem("mode",mode);
+window.location="tournament.html";
+}
+
+</script>
+
+</body>
+</html>
