@@ -1,52 +1,164 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>BattleZone Esports</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body onload="loadTournaments()">
 
-<div class="top-bar">
-  <div>
-    <h3>BattleZone</h3>
-    <small>GAME VICTORY</small>
-  </div>
-  <div class="wallet-box">
-    Rs <span id="topBalance">0</span>
-  </div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<h2>🔥 BattleZone</h2>
+
+<div class="wallet-box">
+
+<span class="wallet">50 Coins</span>
+
+<button id="addCoins">+</button>
+
 </div>
+
+</div>
+
+
+
+<!-- BANNER -->
 
 <div class="banner">
-  <h2>🔥 Welcome to BattleZone Esports</h2>
+
+<h2>Real Gaming • Real Winnings</h2>
+
 </div>
 
-<div class="quick-menu">
-  <div class="quick-card">Support</div>
-  <div class="quick-card">Whatsapp</div>
-  <div class="quick-card">Youtube</div>
-  <div class="quick-card" onclick="window.location.href='wallet.html'">Wallet</div>
+
+
+<!-- GAME SELECT -->
+
+<div class="games-section">
+
+<h3 class="section-title">🎮 Select Game</h3>
+
+<div class="games">
+
+<button class="game-btn" onclick="selectGame('freefire')">
+
+🔥 Free Fire
+
+</button>
+
+<button class="game-btn" onclick="selectGame('scarfall')">
+
+⚡ ScarFall 2.0
+
+</button>
+
 </div>
 
-<h3 class="section-title">🔥 Live Contests</h3>
-<div id="tournamentList"></div>
+</div>
 
-<h3 class="section-title">🎮 My Contests</h3>
+
+
+<!-- LIVE TOURNAMENTS -->
+
+<h3 class="section-title">🔥 Live Tournaments</h3>
+
+<div class="tournaments" id="tournamentList">
+
+</div>
+
+
+
+<!-- MY MATCHES -->
+
+<h3 class="section-title">🎮 My Matches</h3>
+
 <div class="contest-menu">
-  <div class="contest-card">Upcoming</div>
-  <div class="contest-card">Ongoing</div>
-  <div class="contest-card">Completed</div>
+
+<div class="contest-card">Upcoming</div>
+
+<div class="contest-card">Ongoing</div>
+
+<div class="contest-card">Completed</div>
+
 </div>
+
+
+
+<!-- BOTTOM NAVIGATION -->
 
 <div class="bottom-nav">
-  <a href="index.html">Home</a>
-  <a href="wallet.html">Wallet</a>
-  <a href="#">Rank</a>
-  <a href="#" onclick="logout()">Profile</a>
+
+<button onclick="location.href='index.html'">
+
+Home
+
+</button>
+
+<button onclick="location.href='wallet.html'">
+
+Wallet
+
+</button>
+
+<button onclick="location.href='leaderboard.html'">
+
+Rank
+
+</button>
+
+<button onclick="location.href='profile.html'">
+
+Profile
+
+</button>
+
 </div>
 
+
+
 <script src="app.js"></script>
+
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+
+authDomain: "battlezone-c7406.firebaseapp.com",
+
+projectId: "battlezone-c7406",
+
+storageBucket: "battlezone-c7406.firebasestorage.app",
+
+messagingSenderId: "237634131988",
+
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+</script>
+
+
+
 </body>
 </html>
