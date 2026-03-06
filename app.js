@@ -11,6 +11,12 @@ getDoc,
 setDoc
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+import {
+getAuth,
+GoogleAuthProvider,
+signInWithPopup
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
 const firebaseConfig = {
 apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
 authDomain: "battlezone-c7406.firebaseapp.com",
