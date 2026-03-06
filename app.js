@@ -57,22 +57,29 @@ window.location.href="login.html";
 
 function login(){
 
-let email=document.getElementById("email").value;
-let password=document.getElementById("password").value;
+let email=document.getElementById("loginEmail").value.trim();
+let password=document.getElementById("loginPassword").value.trim();
 
 let user=JSON.parse(localStorage.getItem("battlezoneUser"));
 
-if(!user || email!==user.email || password!==user.password){
-alert("Invalid Login");
+if(!user){
+alert("Account not found. Please signup first.");
 return;
 }
+
+if(email===user.email && password===user.password){
 
 localStorage.setItem("isLoggedIn","true");
 
 window.location.href="index.html";
 
+}else{
+
+alert("Invalid Email or Password");
+
 }
 
+}
 
 
 function logout(){
