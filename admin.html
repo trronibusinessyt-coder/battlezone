@@ -1,68 +1,68 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getFirestore, collection, addDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+<!DOCTYPE html>
+<html>
 
-const firebaseConfig = {
-apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
-authDomain: "battlezone-c7406.firebaseapp.com",
-projectId: "battlezone-c7406",
-storageBucket: "battlezone-c7406.firebasestorage.app",
-messagingSenderId: "237634131988",
-appId: "1:237634131988:web:5ca71576b370b49b2def01"
-};
+<head>
 
-const app = initializeApp(firebaseConfig);
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const db = getFirestore(app);
+<title>BattleZone Admin</title>
 
-/* CREATE TOURNAMENT */
+<link rel="stylesheet" href="style.css">
 
-window.createTournament = async function(){
+</head>
 
-let game = document.getElementById("game").value;
+<body>
 
-let map = document.getElementById("map").value;
+<div class="topbar">
 
-let entry = Number(document.getElementById("entry").value);
+<h3>BattleZone Admin Panel</h3>
 
-let prize = Number(document.getElementById("prize").value);
+</div>
 
-let slots = Number(document.getElementById("slots").value);
 
-await addDoc(collection(db,"tournaments"),{
+<h3 class="section-title">Create Tournament</h3>
 
-game:game,
-map:map,
-entryFee:entry,
-prizePool:prize,
-slots:slots,
-joined:0,
-status:"open"
+<div class="card">
 
-});
+<input id="game" placeholder="Game (ff / scar)">
 
-alert("Tournament Created");
+<input id="mode" placeholder="Mode (fullmap / cs / lonewolf)">
 
-}
+<input id="entry" placeholder="Entry Fee">
 
-/* ADD ROOM ID */
+<input id="prize" placeholder="Prize Pool">
 
-window.addRoom = async function(){
+<input id="time" placeholder="Match Time">
 
-let id = document.getElementById("matchId").value;
+<input id="banner" placeholder="Banner Image URL">
 
-let roomId = document.getElementById("roomId").value;
+<button onclick="createTournament()">Create Tournament</button>
 
-let password = document.getElementById("password").value;
+</div>
 
-const ref = doc(db,"tournaments",id);
 
-await updateDoc(ref,{
+<h3 class="section-title">Release Room ID</h3>
 
-roomId:roomId,
-password:password
+<div class="card">
 
-});
+<input id="matchId" placeholder="Match ID">
 
-alert("Room Added");
+<input id="roomIdInput" placeholder="Room ID">
 
-}
+<input id="passInput" placeholder="Password">
+
+<button onclick="releaseRoom()">Release Room</button>
+
+</div>
+
+
+<h3 class="section-title">Tournament List</h3>
+
+<div id="adminList"></div>
+
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+</html>
