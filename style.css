@@ -1,9 +1,9 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0a0f1c;
+background: radial-gradient(circle at top,#0a0f1c,#03040a);
 color:white;
-padding-bottom:80px;
+padding-bottom:90px;
 }
 
 
@@ -14,7 +14,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px;
-background:#111a2e;
+background:linear-gradient(90deg,#240046,#3c096c);
 }
 
 .profile{
@@ -35,27 +35,33 @@ align-items:center;
 }
 
 .wallet span{
-background:#7b2ff7;
+background:linear-gradient(90deg,#7209b7,#00c6ff);
 padding:8px 15px;
 border-radius:20px;
 margin-right:10px;
+box-shadow:0 0 10px rgba(0,198,255,0.5);
 }
 
 .wallet button{
-background:#00c6ff;
+background:linear-gradient(90deg,#00c6ff,#7b2ff7);
 border:none;
 padding:6px 12px;
 border-radius:10px;
+color:white;
+font-weight:bold;
 }
 
 
 /* RULES */
 
 .rules{
-background:#1c2541;
+background:linear-gradient(90deg,#4e00ff,#7b2ff7);
 padding:10px;
+margin:10px;
+border-radius:15px;
 text-align:center;
 font-size:14px;
+font-weight:bold;
 }
 
 
@@ -67,7 +73,14 @@ margin:15px;
 
 .main-banner img{
 width:100%;
-border-radius:12px;
+border-radius:18px;
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+animation:bannerZoom 10s infinite alternate;
+}
+
+@keyframes bannerZoom{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
 }
 
 
@@ -75,23 +88,31 @@ border-radius:12px;
 
 .quick-menu{
 display:flex;
-justify-content:space-around;
-margin:15px 0;
+justify-content:space-between;
+padding:0 10px;
+margin-top:10px;
 }
 
 .quick-btn{
-background:#1c2541;
-padding:15px;
-border-radius:12px;
+background:linear-gradient(145deg,#3a0ca3,#7209b7);
+border-radius:18px;
+padding:18px 10px;
 width:22%;
 text-align:center;
-font-size:14px;
+font-size:13px;
+box-shadow:0 5px 15px rgba(0,0,0,0.6);
+transition:0.3s;
 }
 
-.quick-btn span{
-font-size:20px;
-display:block;
-margin-bottom:5px;
+.quick-btn img{
+width:30px;
+margin-bottom:6px;
+filter:brightness(1.4);
+}
+
+.quick-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 15px #7b2ff7;
 }
 
 
@@ -100,50 +121,64 @@ margin-bottom:5px;
 .section-title{
 margin-left:15px;
 margin-top:20px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.glow{
+color:#00e5ff;
+text-shadow:0 0 15px #00e5ff;
 }
 
 
-/* EXCLUSIVE GAME BANNERS */
+/* EXCLUSIVE GAME */
 
 .exclusive{
 display:flex;
-overflow:auto;
-gap:10px;
+gap:12px;
 padding:10px;
+overflow-x:auto;
+}
+
+.exclusive::-webkit-scrollbar{
+display:none;
 }
 
 .game-banner{
 background:#1c2541;
-border-radius:12px;
+border-radius:18px;
 min-width:220px;
 position:relative;
+box-shadow:0 0 20px rgba(0,198,255,0.4);
 }
 
 .game-banner img{
 width:100%;
-border-radius:12px;
+border-radius:18px;
 }
 
 .fair{
 position:absolute;
-top:5px;
-left:5px;
+top:6px;
+left:6px;
 background:#00c6ff;
 color:black;
 padding:3px 8px;
-border-radius:8px;
+border-radius:10px;
 font-size:12px;
+font-weight:bold;
 }
 
 .play{
 position:absolute;
 bottom:10px;
 right:10px;
-background:#7b2ff7;
+background:linear-gradient(90deg,#7b2ff7,#00c6ff);
 border:none;
 padding:6px 12px;
-border-radius:8px;
+border-radius:20px;
 color:white;
+font-weight:bold;
 }
 
 
@@ -153,7 +188,14 @@ color:white;
 background:linear-gradient(135deg,#1c2541,#3a0ca3);
 margin:15px;
 padding:15px;
-border-radius:12px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+box-shadow:0 0 15px rgba(0,198,255,0.7);
 }
 
 .card img{
@@ -177,7 +219,7 @@ padding:10px;
 margin-top:10px;
 background:#00c6ff;
 border:none;
-border-radius:8px;
+border-radius:10px;
 font-weight:bold;
 }
 
@@ -191,11 +233,24 @@ margin:15px 0;
 }
 
 .contest-card{
-background:#1c2541;
-padding:20px;
-border-radius:12px;
+background:linear-gradient(160deg,#2b0f60,#4e00ff);
+padding:25px;
+border-radius:20px;
 width:28%;
 text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.contest-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00e5ff;
+}
+
+.contest-card img{
+width:35px;
+margin-bottom:5px;
+filter:brightness(1.5);
 }
 
 
@@ -212,77 +267,41 @@ margin:15px;
 padding:10px 20px;
 border:none;
 border-radius:10px;
+background:linear-gradient(90deg,#7b2ff7,#00c6ff);
+color:white;
+font-weight:bold;
 }
 
 .whatsapp{
-background:#25d366;
-color:white;
+background:#25d366 !important;
 }
 
 
-/* BOTTOM NAVIGATION */
+/* BOTTOM NAV */
 
 .bottom-nav{
 position:fixed;
 bottom:0;
 width:100%;
-background:#111a2e;
+background:linear-gradient(180deg,#240046,#3c096c);
 display:flex;
 justify-content:space-around;
-padding:10px 0;
+padding:12px 0;
+border-top-left-radius:20px;
+border-top-right-radius:20px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.6);
 }
 
 .bottom-nav button{
 background:none;
 border:none;
 color:white;
-font-size:14px;
+font-size:13px;
+opacity:0.8;
 }
 
 .bottom-nav .active{
-color:#00c6ff;
-}
-
-
-/* MATCH PAGE */
-
-.match-banner img{
-width:100%;
-border-radius:10px;
-}
-
-.match-info{
-padding:15px;
-}
-
-.rules-box{
-background:#1c2541;
-margin:15px;
-padding:15px;
-border-radius:12px;
-}
-
-.rules-box h3{
-margin-top:0;
-}
-
-.rules-box ul{
-padding-left:20px;
-}
-
-.join-box{
-position:fixed;
-bottom:60px;
-width:100%;
-text-align:center;
-}
-
-.join-btn{
-background:#00c6ff;
-border:none;
-padding:15px 40px;
-border-radius:12px;
-font-size:18px;
+color:#00e5ff;
 font-weight:bold;
 }
 
@@ -310,6 +329,14 @@ background:#00c6ff;
 color:black;
 }
 
+.slot.taken{
+background:red;
+pointer-events:none;
+}
+
+
+/* JOIN FORM */
+
 .join-form{
 padding:20px;
 }
@@ -332,10 +359,8 @@ color:white;
 font-weight:bold;
 }
 
-.slot.taken{
-background:red;
-pointer-events:none;
-}
+
+/* MEMBER LIST */
 
 .member{
 background:#1c2541;
@@ -344,85 +369,4 @@ padding:10px;
 border-radius:8px;
 display:flex;
 justify-content:space-between;
-}
-
-/* PRO ESPORTS EFFECT */
-
-.glow{
-color:#00e5ff;
-text-shadow:0 0 10px #00e5ff;
-}
-
-/* HOVER EFFECT */
-
-.card:hover{
-transform:scale(1.02);
-transition:0.3s;
-box-shadow:0 0 20px rgba(0,198,255,0.7);
-}
-
-/* QUICK BUTTON EFFECT */
-
-.quick-btn:hover{
-background:#293a63;
-transition:0.3s;
-}
-
-/* BANNER ANIMATION */
-
-.main-banner img{
-animation:bannerZoom 10s infinite alternate;
-}
-
-@keyframes bannerZoom{
-
-from{
-transform:scale(1);
-}
-
-to{
-transform:scale(1.05);
-}
-
-}
-
-/* SCROLLBAR HIDE */
-
-.exclusive::-webkit-scrollbar{
-display:none;
-}
-
-.quick-btn img{
-width:28px;
-height:28px;
-margin-bottom:5px;
-}
-
-.contest-card img{
-width:35px;
-margin-bottom:5px;
-}
-
-.contest-card{
-background:linear-gradient(135deg,#1c2541,#3a0ca3);
-padding:25px;
-border-radius:15px;
-width:28%;
-text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-
-.card:hover{
-transform:scale(1.02);
-transition:0.3s;
-box-shadow:0 0 15px rgba(0,198,255,0.7);
-}
-
-/* BATTLEZONE BUTTON GLOW */
-
-.signup-box button:hover,
-.login-box button:hover{
-box-shadow:0 0 15px #ff2e2e;
-transform:scale(1.03);
-transition:0.2s;
 }
