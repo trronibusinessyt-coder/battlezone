@@ -39,17 +39,34 @@ const provider = new GoogleAuthProvider();
 
 function signup(){
 
-let name=document.getElementById("name").value;
+let first=document.getElementById("firstName").value;
+let last=document.getElementById("lastName").value;
+let username=document.getElementById("username").value;
+let phone=document.getElementById("phone").value;
 let email=document.getElementById("email").value;
 let password=document.getElementById("password").value;
+let confirm=document.getElementById("confirmPassword").value;
+let agree=document.getElementById("agree").checked;
 
-if(!name || !email || !password){
-alert("Fill all fields");
+if(!first || !last || !username || !phone || !email || !password){
+alert("Please fill all fields");
+return;
+}
+
+if(password !== confirm){
+alert("Passwords do not match");
+return;
+}
+
+if(!agree){
+alert("Please accept Terms & Privacy Policy");
 return;
 }
 
 let user={
-name:name,
+name:first+" "+last,
+username:username,
+phone:phone,
 email:email,
 password:password,
 wallet:0,
@@ -63,7 +80,6 @@ alert("Account Created Successfully!");
 window.location.href="login.html";
 
 }
-
 
 function login(){
 
