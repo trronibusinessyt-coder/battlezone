@@ -90,6 +90,35 @@ alert("Invalid Email or Password");
 }
 
 
+/* GOOGLE LOGIN */
+
+function googleLogin(){
+
+signInWithPopup(auth, provider)
+.then((result)=>{
+
+let user=result.user;
+
+let data={
+name:user.displayName,
+email:user.email,
+wallet:0,
+transactions:[]
+};
+
+localStorage.setItem("battlezoneUser",JSON.stringify(data));
+localStorage.setItem("isLoggedIn","true");
+
+window.location.href="index.html";
+
+})
+.catch((error)=>{
+alert(error.message);
+});
+
+}
+
+
 function logout(){
 
 localStorage.removeItem("isLoggedIn");
@@ -466,3 +495,4 @@ window.loadMembers=loadMembers;
 window.openGame=openGame;
 window.loadModes=loadModes;
 window.openMode=openMode;
+window.googleLogin=googleLogin;
