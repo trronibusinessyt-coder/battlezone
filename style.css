@@ -345,3 +345,49 @@ border-radius:8px;
 display:flex;
 justify-content:space-between;
 }
+
+/* PRO ESPORTS EFFECT */
+
+.glow{
+color:#00e5ff;
+text-shadow:0 0 10px #00e5ff;
+}
+
+/* HOVER EFFECT */
+
+.card:hover{
+transform:scale(1.02);
+transition:0.3s;
+box-shadow:0 0 20px rgba(0,198,255,0.7);
+}
+
+/* QUICK BUTTON EFFECT */
+
+.quick-btn:hover{
+background:#293a63;
+transition:0.3s;
+}
+
+/* BANNER ANIMATION */
+
+.main-banner img{
+animation:bannerZoom 10s infinite alternate;
+}
+
+@keyframes bannerZoom{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.05);
+}
+
+}
+
+/* SCROLLBAR HIDE */
+
+.exclusive::-webkit-scrollbar{
+display:none;
+}
