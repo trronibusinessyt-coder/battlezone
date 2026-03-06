@@ -3,21 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signup</title>
+<title>BattleZone Signup</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.signup-box{
+max-width:400px;
+margin:60px auto;
+background:#1c2541;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+.signup-box img{
+width:90px;
+margin-bottom:15px;
+}
+
+.signup-box h2{
+margin-bottom:20px;
+}
+
+.signup-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+.signup-box button{
+width:100%;
+padding:12px;
+background:#ff2e2e;
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+font-weight:bold;
+}
+
+.signup-box p{
+margin-top:15px;
+}
+
+.signup-box a{
+color:#00c6ff;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="container">
-<h2>Create Account</h2>
+<div class="signup-box">
+
+<img src="images/logo.png">
+
+<h2>Create BattleZone Account</h2>
 
 <input id="name" placeholder="Full Name">
 <input id="email" placeholder="Email">
 <input id="password" type="password" placeholder="Password">
-<button onclick="signup()">Signup</button>
+
+<button onclick="signup()">SIGN UP</button>
 
 <p>Already have account? <a href="login.html">Login</a></p>
+
 </div>
 
 <script type="module" src="app.js"></script>
