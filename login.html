@@ -3,20 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+<title>BattleZone Login</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+.login-box{
+max-width:400px;
+margin:80px auto;
+background:#1c2541;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
+}
+
+.login-box img{
+width:90px;
+margin-bottom:15px;
+}
+
+.login-box h2{
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
+}
+
+.login-box button{
+width:100%;
+padding:12px;
+background:#ff2e2e;
+border:none;
+border-radius:10px;
+color:white;
+font-size:16px;
+font-weight:bold;
+}
+
+.login-box p{
+margin-top:15px;
+}
+
+.login-box a{
+color:#00c6ff;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="container">
-<h2>Login</h2>
+<div class="login-box">
+
+<img src="images/logo.png">
+
+<h2>BattleZone Login</h2>
 
 <input id="loginEmail" placeholder="Email">
 <input id="loginPassword" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+
+<button onclick="login()">LOGIN</button>
 
 <p>Don't have account? <a href="signup.html">Signup</a></p>
+
 </div>
 
 <script type="module" src="app.js"></script>
