@@ -4,24 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BattleZone Signup</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
 
 .signup-box{
-max-width:400px;
-margin:60px auto;
+max-width:420px;
+margin:40px auto;
 background:#1c2541;
 padding:30px;
-border-radius:15px;
+border-radius:18px;
 text-align:center;
 box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
 .signup-box img{
 width:90px;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .signup-box h2{
@@ -30,33 +29,46 @@ margin-bottom:20px;
 
 .signup-box input{
 width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:10px;
+padding:14px;
+margin:8px 0;
 border:none;
+border-radius:12px;
+background:#2c3a5a;
+color:white;
+font-size:15px;
 }
 
 .signup-box button{
 width:100%;
-padding:12px;
-background:#ff2e2e;
+padding:14px;
+margin-top:12px;
+background:#00c6ff;
 border:none;
-border-radius:10px;
+border-radius:12px;
 color:white;
-font-size:16px;
 font-weight:bold;
+font-size:16px;
 }
 
-.signup-box p{
-margin-top:15px;
+.row{
+display:flex;
+gap:10px;
 }
 
-.signup-box a{
-color:#00c6ff;
+.row input{
+width:50%;
+}
+
+.terms{
+font-size:13px;
+margin-top:10px;
+}
+
+.terms input{
+width:auto;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -67,9 +79,28 @@ color:#00c6ff;
 
 <h2>Create BattleZone Account</h2>
 
-<input id="name" placeholder="Full Name">
+<div class="row">
+<input id="firstName" placeholder="First Name">
+<input id="lastName" placeholder="Last Name">
+</div>
+
+<input id="username" placeholder="Username">
+
+<div class="row">
+<input id="code" placeholder="+91">
+<input id="phone" placeholder="Phone Number">
+</div>
+
 <input id="email" placeholder="Email">
+
+<input id="promo" placeholder="Promo Code (Optional)">
+
 <input id="password" type="password" placeholder="Password">
+<input id="confirmPassword" type="password" placeholder="Confirm Password">
+
+<div class="terms">
+<input type="checkbox" id="agree"> I agree to Terms & Privacy Policy
+</div>
 
 <button onclick="signup()">SIGN UP</button>
 
