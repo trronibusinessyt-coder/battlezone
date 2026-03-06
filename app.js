@@ -14,7 +14,8 @@ setDoc
 import {
 getAuth,
 GoogleAuthProvider,
-signInWithPopup
+signInWithRedirect,
+getRedirectResult
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -28,6 +29,8 @@ appId: "1:237634131988:web:5ca71576b370b49b2def01"
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
+/* ================= GOOGLE AUTH ================= */
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -62,7 +65,6 @@ window.location.href="login.html";
 }
 
 
-
 function login(){
 
 let email=document.getElementById("loginEmail").value.trim();
@@ -90,31 +92,9 @@ alert("Invalid Email or Password");
 }
 
 
-/* GOOGLE LOGIN */
-
 function googleLogin(){
 
-signInWithPopup(auth, provider)
-.then((result)=>{
-
-let user=result.user;
-
-let data={
-name:user.displayName,
-email:user.email,
-wallet:0,
-transactions:[]
-};
-
-localStorage.setItem("battlezoneUser",JSON.stringify(data));
-localStorage.setItem("isLoggedIn","true");
-
-window.location.href="index.html";
-
-})
-.catch((error)=>{
-alert(error.message);
-});
+signInWithRedirect(auth, provider);
 
 }
 
@@ -496,3 +476,31 @@ window.openGame=openGame;
 window.loadModes=loadModes;
 window.openMode=openMode;
 window.googleLogin=googleLogin;
+
+/* ================= GOOGLE REDIRECT RESULT ================= */
+
+getRedirectResult(auth)
+.then((result)=>{
+
+if(result){
+
+let user=result.user;
+
+let data={
+name:user.displayName,
+email:user.email,
+wallet:0,
+transactions:[]
+};
+
+localStorage.setItem("battlezoneUser",JSON.stringify(data));
+localStorage.setItem("isLoggedIn","true");
+
+window.location.href="index.html";
+
+}
+
+})
+.catch((error)=>{
+console.log(error);
+});
