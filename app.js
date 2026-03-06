@@ -308,7 +308,36 @@ alert("Enter Game Name");
 return;
 }
 
+let user=JSON.parse(localStorage.getItem("battlezoneUser"));
+
 let matchId=localStorage.getItem("matchId");
+
+const tRef=doc(db,"tournaments",matchId);
+const tSnap=await getDoc(tRef);
+
+if(!tSnap.exists()){
+alert("Tournament not found");
+return;
+}
+
+let tournament=tSnap.data();
+
+let entry=tournament.entry;
+
+if(user.wallet < entry){
+alert("Not enough balance");
+return;
+}
+
+/* deduct wallet */
+
+user.wallet-=entry;
+
+user.transactions.push("Joined Tournament ₹"+entry);
+
+localStorage.setItem("battlezoneUser",JSON.stringify(user));
+
+/* slot booking */
 
 const ref=doc(db,"joins",matchId);
 
