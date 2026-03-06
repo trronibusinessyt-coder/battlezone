@@ -110,7 +110,7 @@ if(!user) return;
 
 document.getElementById("username").innerText=user.name;
 
-document.getElementById("balance").innerText="Rs "+user.wallet;
+document.getElementById("balance").innerText="₹ "+user.wallet;
 
 let history=document.getElementById("history");
 
@@ -141,7 +141,7 @@ let user=JSON.parse(localStorage.getItem("battlezoneUser"));
 
 user.wallet+=amount;
 
-user.transactions.push("Added Rs "+amount);
+user.transactions.push("Added ₹"+amount);
 
 localStorage.setItem("battlezoneUser",JSON.stringify(user));
 
@@ -153,7 +153,7 @@ loadWallet();
 
 
 
-/* ================= FIREBASE TOURNAMENT LOAD ================= */
+/* ================= TOURNAMENT LOAD ================= */
 
 async function loadTournaments(){
 
@@ -163,7 +163,7 @@ let user=JSON.parse(localStorage.getItem("battlezoneUser"));
 
 if(!user) return;
 
-
+let selectedMode=localStorage.getItem("gameMode");
 
 let topBal=document.getElementById("topBalance");
 
@@ -173,25 +173,23 @@ topBal.innerText="₹"+user.wallet;
 
 }
 
-
-
 let container=document.getElementById("tournamentList");
 
 if(!container) return;
 
 container.innerHTML="";
 
-
-
 const querySnapshot=await getDocs(collection(db,"tournaments"));
 
-querySnapshot.forEach((doc)=>{
+querySnapshot.forEach((docSnap)=>{
 
-let t=doc.data();
+let t=docSnap.data();
+
+if(selectedMode && t.mode!==selectedMode) return;
 
 container.innerHTML+=`
 
-<div class="card" onclick="openMatch('${doc.id}')">
+<div class="card" onclick="openMatch('${docSnap.id}')">
 
 <img src="${t.banner}" style="width:100%;border-radius:10px">
 
@@ -217,7 +215,7 @@ container.innerHTML+=`
 
 
 
-/* ================= OPEN MATCH PAGE ================= */
+/* ================= OPEN MATCH ================= */
 
 function openMatch(id){
 
@@ -232,8 +230,6 @@ window.location.href="match.html";
 /* ================= SLOT SYSTEM ================= */
 
 let selectedSlot=null;
-
-
 
 async function loadSlots(){
 
@@ -260,9 +256,7 @@ for(let i=1;i<=48;i++){
 let takenClass=taken[i] ? "taken" : "";
 
 grid.innerHTML+=`
-<div class="slot ${takenClass}" 
-onclick="selectSlot(${i})" 
-id="slot${i}">
+<div class="slot ${takenClass}" onclick="selectSlot(${i})" id="slot${i}">
 ${i}
 </div>
 `;
@@ -324,44 +318,29 @@ window.location.href="index.html";
 
 
 
-/* ================= GLOBAL FUNCTIONS ================= */
-
-window.loadTournaments = loadTournaments;
-window.signup = signup;
-window.login = login;
-window.logout = logout;
-window.loadWallet = loadWallet;
-window.addMoney = addMoney;
-window.openMatch = openMatch;
-window.loadSlots = loadSlots;
-window.selectSlot = selectSlot;
-window.confirmJoin = confirmJoin;
-window.loadMembers = loadMembers;
-
-
-/* ================= LOAD JOINED MEMBERS ================= */
+/* ================= JOINED MEMBERS ================= */
 
 async function loadMembers(){
 
-let list = document.getElementById("memberList");
+let list=document.getElementById("memberList");
 
 if(!list) return;
 
-list.innerHTML = "";
+list.innerHTML="";
 
-let matchId = localStorage.getItem("matchId");
+let matchId=localStorage.getItem("matchId");
 
-const ref = doc(db,"joins",matchId);
+const ref=doc(db,"joins",matchId);
 
-const snap = await getDoc(ref);
+const snap=await getDoc(ref);
 
 if(!snap.exists()) return;
 
-let data = snap.data();
+let data=snap.data();
 
 Object.keys(data).forEach(slot=>{
 
-list.innerHTML += `
+list.innerHTML+=`
 
 <div class="member">
 <span>Slot ${slot}</span>
@@ -373,3 +352,74 @@ list.innerHTML += `
 });
 
 }
+
+
+
+/* ================= GAME CATEGORY SYSTEM ================= */
+
+function openGame(game){
+
+localStorage.setItem("gameType",game);
+
+window.location.href="game.html";
+
+}
+
+function loadModes(){
+
+let game=localStorage.getItem("gameType");
+
+let box=document.getElementById("modeList");
+
+if(!box) return;
+
+box.innerHTML="";
+
+if(game==="ff"){
+
+box.innerHTML+=`
+<div class="card" onclick="openMode('fullmap')">Full Map</div>
+<div class="card" onclick="openMode('cs')">Clash Squad</div>
+<div class="card" onclick="openMode('lonewolf')">Lone Wolf</div>
+`;
+
+}
+
+if(game==="scar"){
+
+box.innerHTML+=`
+<div class="card" onclick="openMode('survival')">Survival</div>
+<div class="card" onclick="openMode('solo')">Solo</div>
+<div class="card" onclick="openMode('squad')">Squad</div>
+`;
+
+}
+
+}
+
+function openMode(mode){
+
+localStorage.setItem("gameMode",mode);
+
+window.location.href="index.html";
+
+}
+
+
+
+/* ================= GLOBAL FUNCTIONS ================= */
+
+window.loadTournaments=loadTournaments;
+window.signup=signup;
+window.login=login;
+window.logout=logout;
+window.loadWallet=loadWallet;
+window.addMoney=addMoney;
+window.openMatch=openMatch;
+window.loadSlots=loadSlots;
+window.selectSlot=selectSlot;
+window.confirmJoin=confirmJoin;
+window.loadMembers=loadMembers;
+window.openGame=openGame;
+window.loadModes=loadModes;
+window.openMode=openMode;
