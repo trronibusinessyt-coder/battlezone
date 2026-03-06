@@ -29,6 +29,8 @@ appId: "1:237634131988:web:5ca71576b370b49b2def01"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 /* ================= USER SYSTEM ================= */
 
