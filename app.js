@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 
-import { 
+import {
 getFirestore,
 collection,
 getDocs,
@@ -15,14 +15,13 @@ const firebaseConfig = {
 apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
 authDomain: "battlezone-c7406.firebaseapp.com",
 projectId: "battlezone-c7406",
-storageBucket: "battlezone-c7406.firebasestorage.app",
+storageBucket: "battlezone-c7406.appspot.com",
 messagingSenderId: "237634131988",
 appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 
 
 /* ================= USER SYSTEM ================= */
@@ -58,8 +57,8 @@ window.location.href="login.html";
 
 function login(){
 
-let email=document.getElementById("loginEmail").value;
-let password=document.getElementById("loginPassword").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
 
 let user=JSON.parse(localStorage.getItem("battlezoneUser"));
 
@@ -318,7 +317,7 @@ window.location.href="index.html";
 
 
 
-/* ================= JOINED MEMBERS ================= */
+/* ================= MEMBERS ================= */
 
 async function loadMembers(){
 
@@ -355,7 +354,7 @@ list.innerHTML+=`
 
 
 
-/* ================= GAME CATEGORY SYSTEM ================= */
+/* ================= GAME CATEGORY ================= */
 
 function openGame(game){
 
@@ -407,14 +406,14 @@ window.location.href="index.html";
 
 
 
-/* ================= GLOBAL FUNCTIONS ================= */
+/* ================= GLOBAL ================= */
 
-window.loadTournaments=loadTournaments;
 window.signup=signup;
 window.login=login;
 window.logout=logout;
 window.loadWallet=loadWallet;
 window.addMoney=addMoney;
+window.loadTournaments=loadTournaments;
 window.openMatch=openMatch;
 window.loadSlots=loadSlots;
 window.selectSlot=selectSlot;
