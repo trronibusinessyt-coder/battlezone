@@ -531,3 +531,32 @@ document.getElementById("liveCount").innerText = tournaments.length;
 }
 
 setTimeout(updateLiveCounter,1000);
+
+/* WALLET BALANCE ANIMATION */
+
+function animateBalance(){
+
+let el = document.getElementById("topBalance");
+
+if(!el) return;
+
+let value = parseFloat(el.innerText.replace("₹",""));
+
+let count = 0;
+
+let interval = setInterval(()=>{
+
+count += value/20;
+
+if(count >= value){
+count = value;
+clearInterval(interval);
+}
+
+el.innerText = "₹"+count.toFixed(2);
+
+},50);
+
+}
+
+setTimeout(animateBalance,500);
