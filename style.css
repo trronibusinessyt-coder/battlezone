@@ -24,7 +24,7 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:8px 12px;
 background:linear-gradient(90deg,#240046,#3c096c);
 }
 
@@ -34,10 +34,10 @@ align-items:center;
 }
 
 .profile img{
-width:40px;
-height:40px;
+width:32px;
+height:32px;
 border-radius:50%;
-margin-right:10px;
+margin-right:8px;
 }
 
 .wallet{
@@ -47,16 +47,17 @@ align-items:center;
 
 .wallet span{
 background:linear-gradient(90deg,#7209b7,#00c6ff);
-padding:8px 15px;
-border-radius:20px;
-margin-right:10px;
-box-shadow:0 0 10px rgba(0,198,255,0.5);
+padding:5px 10px;
+border-radius:18px;
+margin-right:8px;
+font-size:12px;
+box-shadow:0 0 8px rgba(0,198,255,0.5);
 }
 
 .wallet button{
 background:linear-gradient(90deg,#00c6ff,#7b2ff7);
 border:none;
-padding:6px 12px;
+padding:4px 8px;
 border-radius:10px;
 color:white;
 font-weight:bold;
@@ -79,8 +80,8 @@ font-weight:bold;
 /* COMPACT BANNER */
 
 .main-banner{
-margin:8px;
-height:110px;
+margin:6px 10px;
+height:90px;
 overflow:hidden;
 border-radius:14px;
 }
@@ -90,14 +91,8 @@ width:100%;
 height:100%;
 object-fit:cover;
 border-radius:14px;
-box-shadow:0 0 15px rgba(0,0,0,0.5);
+box-shadow:0 0 12px rgba(0,0,0,0.5);
 }
-
-@keyframes bannerZoom{
-from{transform:scale(1);}
-to{transform:scale(1.05);}
-}
-
 
 /* QUICK MENU */
 
