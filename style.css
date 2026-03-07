@@ -525,3 +525,34 @@ transition:0.3s;
 transform:translateY(-4px);
 box-shadow:0 0 15px #7b2ff7;
 }
+
+.quick-actions{
+display:flex;
+justify-content:space-between;
+margin:15px 10px;
+}
+
+.quick-btn{
+width:70px;
+height:70px;
+background:linear-gradient(180deg,#7b2ff7,#2c0b5e);
+border-radius:15px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+text-decoration:none;
+box-shadow:0 0 12px #7b2ff7;
+font-size:12px;
+}
+
+.quick-btn i{
+font-size:22px;
+margin-bottom:5px;
+}
+
+.quick-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 18px #9d4dff;
+}
