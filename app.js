@@ -207,7 +207,8 @@ let topBal=document.getElementById("topBalance");
 
 if(topBal){
 
-topBal.innerText="₹"+user.wallet;
+topBal.innerHTML =
+'<img src="https://cdn-icons-png.flaticon.com/512/138/138292.png" class="coin-icon">' + user.wallet;
 
 }
 
@@ -539,20 +540,20 @@ let el = document.getElementById("topBalance");
 
 if(!el) return;
 
-let value = parseFloat(el.innerText.replace("₹",""));
+let value = parseFloat(el.innerText.replace("🪙",""));
 
 let count = 0;
 
 let interval = setInterval(()=>{
 
-count += value/20;
+count += value/10;
 
 if(count >= value){
 count = value;
 clearInterval(interval);
 }
 
-el.innerText = "₹"+count.toFixed(2);
+el.innerHTML = '<img src="https://cdn-icons-png.flaticon.com/512/138/138292.png" class="coin-icon">' + count.toFixed(0);
 
 },50);
 
