@@ -256,9 +256,10 @@ margin:15px 0;
 background:linear-gradient(160deg,#2b0f60,#4e00ff);
 padding:14px;
 border-radius:18px;
-width:30%;
+width:32%;
 text-align:center;
 font-size:13px;
+cursor:pointer;
 box-shadow:0 0 15px rgba(0,0,0,0.5);
 transition:0.3s;
 }
@@ -555,4 +556,40 @@ margin-bottom:5px;
 .quick-btn:hover{
 transform:translateY(-3px);
 box-shadow:0 0 18px #9d4dff;
+}
+
+/* MY CONTEST PRO STYLE */
+
+.contest-menu{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin:15px;
+}
+
+.contest-card{
+flex:1;
+background:linear-gradient(145deg,#4e00ff,#7209b7);
+border-radius:18px;
+padding:20px;
+text-align:center;
+text-decoration:none;
+color:white;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.contest-card img{
+width:35px;
+margin-bottom:8px;
+}
+
+.contest-card span{
+font-size:14px;
+font-weight:bold;
+}
+
+.contest-card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 15px #7b2ff7;
 }
