@@ -1,3 +1,8 @@
+html, body{
+max-width:100%;
+overflow-x:hidden;
+}
+
 html,body{
 max-width:100%;
 overflow-x:hidden;
@@ -27,6 +32,11 @@ padding:10px 12px;
 background:linear-gradient(90deg,#240046,#3c096c);
 height:60px;
 overflow:hidden;
+}
+
+.topbar{
+width:100%;
+box-sizing:border-box;
 }
 
 .profile{
@@ -373,13 +383,12 @@ justify-content:space-between;
 
 /* PRO BANNER SLIDER */
 
-..banner-slider{
-width:94%;
+.banner-slider{
+width:92%;
 margin:10px auto;
-height:120px;
-border-radius:16px;
+height:130px;
+border-radius:14px;
 overflow:hidden;
-box-shadow:0 0 15px rgba(0,198,255,0.4);
 position:relative;
 }
 
@@ -508,8 +517,10 @@ box-shadow:0 0 15px #7b2ff7;
 
 .quick-actions{
 display:flex;
-justify-content:space-between;
+justify-content:space-around;
 margin:15px 10px;
+width:100%;
+box-sizing:border-box;
 }
 
 .quick-btn{
