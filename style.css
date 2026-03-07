@@ -438,3 +438,13 @@ transform: translateY(0);
 }
 
 }
+
+/* LIVE TOURNAMENT COUNTER */
+
+.live-counter{
+margin-left:15px;
+color:#00e5ff;
+font-weight:bold;
+font-size:14px;
+text-shadow:0 0 10px #00e5ff;
+}
