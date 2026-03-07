@@ -617,3 +617,35 @@ font-size:12px;
 color:#9aa0a6;
 margin-top:-5px;
 }
+
+/* EXCLUSIVE HEADER */
+
+.exclusive-header{
+display:flex;
+align-items:center;
+gap:6px;
+margin-left:15px;
+margin-top:15px;
+}
+
+.exclusive-text{
+font-weight:bold;
+font-size:18px;
+color:#00e5ff;
+}
+
+.live-badge{
+background:red;
+color:white;
+font-size:9px;
+padding:2px 6px;
+border-radius:5px;
+font-weight:bold;
+}
+
+.exclusive-sub{
+margin-left:15px;
+font-size:12px;
+color:#9aa0a6;
+margin-top:2px;
+}
