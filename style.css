@@ -700,8 +700,9 @@ box-shadow:0 0 10px rgba(0,198,255,0.5);
 /* COIN WALLET STYLE */
 
 .coin-icon{
-width:16px;
+width:18px;
 margin-right:4px;
+filter:drop-shadow(0 0 5px gold);
 animation:coinGlow 2s infinite;
 }
 
