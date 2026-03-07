@@ -649,3 +649,27 @@ font-size:12px;
 color:#9aa0a6;
 margin-top:2px;
 }
+
+/* TOP RIGHT ACTIONS */
+
+.top-actions{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* SUPPORT ICON */
+
+.support-icon{
+background:linear-gradient(145deg,#4e00ff,#7209b7);
+width:32px;
+height:32px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+color:#00e5ff;
+font-size:16px;
+text-decoration:none;
+box-shadow:0 0 10px rgba(0,198,255,0.5);
+}
