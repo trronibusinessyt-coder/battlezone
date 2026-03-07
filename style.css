@@ -416,3 +416,25 @@ animation-delay:8s;
 100%{opacity:0;}
 
 }
+
+/* Quick Menu Floating Animation */
+
+.quick-btn{
+animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+0%{
+transform: translateY(0);
+}
+
+50%{
+transform: translateY(-5px);
+}
+
+100%{
+transform: translateY(0);
+}
+
+}
