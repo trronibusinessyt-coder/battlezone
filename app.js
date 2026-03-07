@@ -520,3 +520,14 @@ window.location.href="index.html";
 .catch((error)=>{
 console.log(error);
 });
+
+
+function updateLiveCounter(){
+
+let tournaments = document.querySelectorAll(".card");
+
+document.getElementById("liveCount").innerText = tournaments.length;
+
+}
+
+setTimeout(updateLiveCounter,1000);
