@@ -149,7 +149,7 @@ if(!user) return;
 
 document.getElementById("username").innerText=user.name;
 
-document.getElementById("balance").innerText="₹ "+user.wallet;
+document.getElementById("topBalance").innerText = "🪙 " + balance;
 
 let history=document.getElementById("history");
 
@@ -162,7 +162,6 @@ history.innerHTML+="<p>"+t+"</p>";
 });
 
 }
-
 
 
 function addMoney(){
