@@ -233,11 +233,12 @@ margin:15px 0;
 
 .contest-card{
 background:linear-gradient(160deg,#2b0f60,#4e00ff);
-padding:25px;
-border-radius:20px;
-width:28%;
+padding:14px;
+border-radius:18px;
+width:30%;
 text-align:center;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+font-size:13px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
 transition:0.3s;
 }
 
