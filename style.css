@@ -243,39 +243,6 @@ border-radius:10px;
 font-weight:bold;
 }
 
-
-/* MY CONTEST */
-
-.contest-menu{
-display:flex;
-justify-content:space-around;
-margin:15px 0;
-}
-
-.contest-card{
-background:linear-gradient(160deg,#2b0f60,#4e00ff);
-padding:14px;
-border-radius:18px;
-width:32%;
-text-align:center;
-font-size:13px;
-cursor:pointer;
-box-shadow:0 0 15px rgba(0,0,0,0.5);
-transition:0.3s;
-}
-
-.contest-card:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px #00e5ff;
-}
-
-.contest-card img{
-width:35px;
-margin-bottom:5px;
-filter:brightness(1.5);
-}
-
-
 /* SHARE BUTTON */
 
 .share{
