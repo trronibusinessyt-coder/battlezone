@@ -673,3 +673,42 @@ font-size:16px;
 text-decoration:none;
 box-shadow:0 0 10px rgba(0,198,255,0.5);
 }
+
+/* COIN WALLET STYLE */
+
+.coin-icon{
+width:16px;
+margin-right:4px;
+animation:coinGlow 2s infinite;
+}
+
+/* Wallet glow */
+
+.wallet span{
+display:flex;
+align-items:center;
+background:linear-gradient(90deg,#7209b7,#00c6ff);
+padding:5px 10px;
+border-radius:18px;
+margin-right:8px;
+font-size:12px;
+box-shadow:0 0 10px rgba(0,198,255,0.7);
+}
+
+/* coin animation */
+
+@keyframes coinGlow{
+
+0%{
+transform:rotate(0deg);
+}
+
+50%{
+transform:rotate(15deg);
+}
+
+100%{
+transform:rotate(0deg);
+}
+
+}
