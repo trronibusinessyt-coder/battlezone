@@ -448,3 +448,37 @@ font-weight:bold;
 font-size:14px;
 text-shadow:0 0 10px #00e5ff;
 }
+
+/* ULTRA PRO NAVBAR */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:linear-gradient(180deg,#240046,#3c096c);
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+border-top-left-radius:20px;
+border-top-right-radius:20px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.6);
+}
+
+.nav-btn{
+background:none;
+border:none;
+color:white;
+text-align:center;
+font-size:12px;
+opacity:0.8;
+}
+
+.nav-btn span{
+font-size:18px;
+display:block;
+}
+
+.nav-btn.active{
+color:#00e5ff;
+font-weight:bold;
+}
