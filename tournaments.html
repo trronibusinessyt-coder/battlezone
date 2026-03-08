@@ -141,35 +141,37 @@ where("mode","==",mode),
 where("status","==",status)
 );
 
-const snapshot = await getDocs(q);
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
 
 html += `
 <div class="tournament-card">
 
-<img class="banner" src="images/${data.banner}">
+<img class="banner" src="images/${data.banner || 'banner.jpg'}">
 
 <div class="tags">
-<span class="tag solo">${data.team}</span>
-<span class="tag map">${data.map}</span>
+<span class="tag solo">${data.team || 'Solo'}</span>
+<span class="tag map">${data.map || 'Bermuda'}</span>
 </div>
 
-<h3 class="title">${data.title}</h3>
+<h3 class="title">${data.title || 'Battle Royale Match'}</h3>
 
 <div class="row">
 
 <div class="date">
-${data.date}<br>
-${data.time}
+${data.date || '--'}<br>
+${data.time || '--'}
 </div>
 
 <div class="prize">
 PRIZE POOL<br>
-🪙 ${data.prize}
+🪙 ${data.prize || 0}
 </div>
 
 <div class="kill">
 PER KILL<br>
-🪙 ${data.perKill}
+🪙 ${data.perKill || 0}
 </div>
 
 </div>
@@ -178,17 +180,18 @@ PER KILL<br>
 
 <div class="slots">
 
-${data.joined}/${data.slots}
+${data.joined || 0}/${data.slots || 48}
 
 <div class="progress">
-<div class="fill" style="width:${(data.joined/data.slots)*100}%"></div>
+<div class="fill" style="width:${((data.joined || 0)/(data.slots || 48))*100}%"></div>
 </div>
 
 </div>
 
-<button onclick="openTournament('${doc.id}')">
+<button onclick="openTournament('${doc.id}')"
+class="${(data.joined >= data.slots) ? 'full':'join'}">
 
-JOIN
+${(data.joined >= data.slots) ? 'MATCH FULL':'JOIN'}
 
 </button>
 
