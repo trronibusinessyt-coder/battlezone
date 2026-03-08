@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tournaments</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0c0f24;
+color:white;
+margin:0;
+padding:20px;
+}
+
+.title{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.card{
+background:#1b1f3a;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+button{
+margin-top:10px;
+padding:10px;
+width:100%;
+background:#6a00ff;
+border:none;
+border-radius:8px;
+color:white;
+font-size:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="title">
+Available Tournaments
+</div>
+
+<div id="tournamentList"></div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.firebasestorage.app",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const querySnapshot = await getDocs(collection(db,"tournaments"));
+
+querySnapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+const card = document.createElement("div");
+card.className = "card";
+
+card.innerHTML = `
+
+<h3>${data.game} - ${data.mode}</h3>
+
+<p>Entry Fee : ₹${data.entryFee}</p>
+
+<p>Prize Pool : ₹${data.prizePool}</p>
+
+<p>Slots : ${data.joined} / ${data.slots}</p>
+
+<button onclick="joinTournament()">JOIN</button>
+
+`;
+
+document.getElementById("tournamentList").appendChild(card);
+
+});
+
+window.joinTournament = function(){
+
+alert("Join system next step me banayenge");
+
+}
+
+</script>
+
+</body>
+</html>
