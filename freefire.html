@@ -63,7 +63,7 @@ BattleZone
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
 apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
@@ -79,7 +79,8 @@ const db = getFirestore(app);
 
 const modeList = document.getElementById("modeList");
 
-const snapshot = await getDocs(collection(db,"modes"));
+const q = query(collection(db,"modes"), orderBy("order"));
+const snapshot = await getDocs(q);
 
 snapshot.forEach((doc)=>{
 
