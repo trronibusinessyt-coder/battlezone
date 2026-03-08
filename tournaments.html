@@ -141,6 +141,24 @@ where("mode","==",mode),
 where("status","==",status)
 );
 
+const snapshot = await getDocs(q);
+
+snapshot.forEach((doc)=>{
+
+const data = doc.data();
+
+async function loadTournaments(status){
+
+let html = "";
+
+const q = query(
+collection(db,"tournaments"),
+where("mode","==",mode),
+where("status","==",status)
+);
+
+const snapshot = await getDocs(q);
+
 snapshot.forEach((doc)=>{
 
 const data = doc.data();
@@ -188,11 +206,8 @@ ${data.joined || 0}/${data.slots || 48}
 
 </div>
 
-<button onclick="openTournament('${doc.id}')"
-class="${(data.joined >= data.slots) ? 'full':'join'}">
-
-${(data.joined >= data.slots) ? 'MATCH FULL':'JOIN'}
-
+<button onclick="openTournament('${doc.id}')" class="join">
+JOIN
 </button>
 
 </div>
@@ -201,6 +216,10 @@ ${(data.joined >= data.slots) ? 'MATCH FULL':'JOIN'}
 `;
 
 });
+
+document.getElementById("tournamentList").innerHTML = html;
+
+}
 
 document.getElementById("tournamentList").innerHTML = html;
 
