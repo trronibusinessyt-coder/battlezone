@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BattleZone Tournament</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
+}
+
+.topbar{
+background:#3b0066;
+padding:15px;
+font-size:18px;
+}
+
+.banner{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.tabs{
+display:flex;
+background:#200040;
+}
+
+.tabs button{
+flex:1;
+padding:12px;
+border:none;
+background:none;
+color:white;
+font-weight:bold;
+}
+
+.tabs button.active{
+color:orange;
+}
+
+.section{
+padding:15px;
+}
+
+.info span{
+background:#eee;
+color:black;
+padding:5px 8px;
+border-radius:5px;
+margin:4px;
+display:inline-block;
+}
+
+.join-btn{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#36d7c9;
+padding:15px;
+text-align:center;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+← Tournament Details
+</div>
+
+<img src="images/banner.jpg" class="banner">
+
+<div class="tabs">
+<button class="active" onclick="showTab('desc')">DESCRIPTION</button>
+<button onclick="showTab('members')">JOINED MEMBER</button>
+</div>
+
+<div class="section" id="desc">
+
+<h3 id="title"></h3>
+
+<div class="info">
+
+<span id="team"></span>
+
+<span id="entry"></span>
+
+<span id="map"></span>
+
+<span id="time"></span>
+
+</div>
+
+<h4>Prize Details</h4>
+
+<p>Winning Prize : ₹<span id="prize"></span></p>
+
+<p>Per Kill : <span id="perKill"></span></p>
+
+<h4>Rules</h4>
+
+<p>
+
+• Double Vector Ban<br>
+• M79 Launcher Ban<br>
+• Hack Not Allowed
+
+</p>
+
+</div>
+
+<div class="section" id="members" style="display:none">
+
+<div id="memberList"></div>
+
+</div>
+
+<div class="join-btn" onclick="joinMatch()">
+
+JOIN NOW
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "YOURKEY",
+authDomain: "YOURDOMAIN",
+projectId: "YOURPROJECTID",
+storageBucket: "YOURBUCKET",
+messagingSenderId: "YOURID",
+appId: "YOURAPPID"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const id = urlParams.get("id");
+
+const snap = await getDoc(doc(db,"tournaments",id));
+
+const data = snap.data();
+
+document.getElementById("title").innerText = data.title;
+
+document.getElementById("team").innerText = "Team : "+data.team;
+
+document.getElementById("entry").innerText = "Entry : ₹"+data.entryFee;
+
+document.getElementById("map").innerText = "Map : "+data.map;
+
+document.getElementById("time").innerText = data.time;
+
+document.getElementById("prize").innerText = data.prize;
+
+document.getElementById("perKill").innerText = data.perKill;
+
+window.joinMatch = function(){
+
+window.location.href = "seat-select.html?id="+id;
+
+}
+
+window.showTab = function(tab){
+
+document.getElementById("desc").style.display="none";
+document.getElementById("members").style.display="none";
+
+document.getElementById(tab).style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
