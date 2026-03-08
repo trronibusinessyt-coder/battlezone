@@ -79,29 +79,43 @@ window.createTournament = async function(){
 
 const game = document.getElementById("game").value;
 const mode = document.getElementById("mode").value;
-const entryFee = Number(document.getElementById("entryFee").value);
-const prizePool = Number(document.getElementById("prizePool").value);
+
+const entry = Number(document.getElementById("entryFee").value);
+const prize = Number(document.getElementById("prizePool").value);
 const slots = Number(document.getElementById("slots").value);
+
 const map = document.getElementById("map").value;
-const roomId = document.getElementById("roomId").value;
-const password = document.getElementById("password").value;
 
 await addDoc(collection(db,"tournaments"),{
 
 game:game,
 mode:mode,
-entryFee:entryFee,
-prizePool:prizePool,
+
+team:"Solo",
+map:map,
+
+title:"BATTLE ROYALE | SOLO",
+
+entry:entry,
+prize:prize,
+perKill:4,
+
 slots:slots,
 joined:0,
-map:map,
-roomId:roomId,
-password:password,
-status:"open"
+
+date:"05/03/2026",
+time:"10:00 pm",
+
+banner:"solo.jpg",
+
+roomId:"",
+password:"",
+
+status:"upcoming"
 
 });
 
-alert("Tournament Created Successfully");
+alert("Tournament Created");
 
 }
 
