@@ -446,9 +446,9 @@ box.innerHTML="";
 if(game==="ff"){
 
 box.innerHTML+=`
-<div class="card" onclick="openMode('fullmap')">Full Map</div>
-<div class="card" onclick="openMode('cs')">Clash Squad</div>
-<div class="card" onclick="openMode('lonewolf')">Lone Wolf</div>
+<div class="card" onclick="openMode('solo')">FULL MAP SOLO</div>
+<div class="card" onclick="openMode('duo')">FULL MAP DUO</div>
+<div class="card" onclick="openMode('squad')">FULL MAP SQUAD</div>
 `;
 
 }
