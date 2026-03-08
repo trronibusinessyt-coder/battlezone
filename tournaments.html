@@ -145,7 +145,8 @@ const db = getFirestore(app);
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get("mode");
 
-document.getElementById("modeTitle").innerText = mode;
+const title = mode.replace(/([A-Z])/g,' $1').toUpperCase();
+document.getElementById("modeTitle").innerText = title;
 
 
 async function loadTournaments(status){
