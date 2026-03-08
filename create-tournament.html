@@ -64,12 +64,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
-  authDomain: "battlezone-c7406.firebaseapp.com",
-  projectId: "battlezone-c7406",
-  storageBucket: "battlezone-c7406.firebasestorage.app",
-  messagingSenderId: "237634131988",
-  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.firebasestorage.app",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -79,9 +79,9 @@ window.createTournament = async function(){
 
 const game = document.getElementById("game").value;
 const mode = document.getElementById("mode").value;
-const entryFee = document.getElementById("entryFee").value;
-const prizePool = document.getElementById("prizePool").value;
-const slots = document.getElementById("slots").value;
+const entryFee = Number(document.getElementById("entryFee").value);
+const prizePool = Number(document.getElementById("prizePool").value);
+const slots = Number(document.getElementById("slots").value);
 const map = document.getElementById("map").value;
 const roomId = document.getElementById("roomId").value;
 const password = document.getElementById("password").value;
@@ -90,9 +90,9 @@ await addDoc(collection(db,"tournaments"),{
 
 game:game,
 mode:mode,
-entryFee:Number(entryFee),
-prizePool:Number(prizePool),
-slots:Number(slots),
+entryFee:entryFee,
+prizePool:prizePool,
+slots:slots,
 joined:0,
 map:map,
 roomId:roomId,
@@ -101,7 +101,7 @@ status:"open"
 
 });
 
-alert("Tournament Created");
+alert("Tournament Created Successfully");
 
 }
 
