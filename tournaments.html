@@ -143,16 +143,10 @@ where("status","==",status)
 
 const snapshot = await getDocs(q);
 
-let html = "";
-
-snapshot.forEach(doc => {
-
-const data = doc.data();
-
 html += `
 <div class="tournament-card">
 
-<img class="banner" src="images/banner.jpg">
+<img class="banner" src="images/${data.banner}">
 
 <div class="tags">
 <span class="tag solo">${data.team}</span>
@@ -192,14 +186,17 @@ ${data.joined}/${data.slots}
 
 </div>
 
-<button onclick="openTournament('${doc.id}')" class="join">
+<button onclick="openTournament('${doc.id}')">
+
 JOIN
+
 </button>
 
 </div>
 
 </div>
 `;
+
 });
 
 document.getElementById("tournamentList").innerHTML = html;
