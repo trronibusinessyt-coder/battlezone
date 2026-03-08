@@ -469,7 +469,7 @@ function openMode(mode){
 
 localStorage.setItem("gameMode",mode);
 
-window.location.href="index.html";
+window.location.href="tournaments.html?mode="+mode;
 
 }
 
