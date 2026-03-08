@@ -184,7 +184,7 @@ const db = getFirestore(app);
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get("mode");
+const mode = urlParams.get("mode") || "fullmap";
 
 async function loadTournaments(status){
 
@@ -192,8 +192,7 @@ let html="";
 
 const q=query(
 collection(db,"tournaments"),
-where("mode","==",mode),
-where("status","==",status)
+where("mode","==",mode)
 );
 
 const snapshot=await getDocs(q);
