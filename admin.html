@@ -67,6 +67,7 @@ border-radius:10px;
 font-size:16px;
 background:#6a00ff;
 color:white;
+cursor:pointer;
 }
 
 </style>
@@ -126,7 +127,21 @@ Wallet Control
 
 function openPage(page){
 
-alert(page + " page open karega (next step me banayenge)");
+if(page === "createTournament"){
+window.location.href = "create-tournament.html";
+}
+
+if(page === "manageModes"){
+alert("Manage Modes page next step me banayenge");
+}
+
+if(page === "manageGames"){
+alert("Manage Games page next step me banayenge");
+}
+
+if(page === "walletControl"){
+alert("Wallet Control page next step me banayenge");
+}
 
 }
 
@@ -138,12 +153,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
-  authDomain: "battlezone-c7406.firebaseapp.com",
-  projectId: "battlezone-c7406",
-  storageBucket: "battlezone-c7406.firebasestorage.app",
-  messagingSenderId: "237634131988",
-  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.firebasestorage.app",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
 
 const app = initializeApp(firebaseConfig);
