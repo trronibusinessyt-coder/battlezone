@@ -132,5 +132,39 @@ alert(page + " page open karega (next step me banayenge)");
 
 </script>
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+  authDomain: "battlezone-c7406.firebaseapp.com",
+  projectId: "battlezone-c7406",
+  storageBucket: "battlezone-c7406.firebasestorage.app",
+  messagingSenderId: "237634131988",
+  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+/* USERS COUNT */
+
+const usersSnapshot = await getDocs(collection(db,"users"));
+document.getElementById("users").innerText = usersSnapshot.size;
+
+/* TOURNAMENT COUNT */
+
+const matchSnapshot = await getDocs(collection(db,"tournaments"));
+document.getElementById("matches").innerText = matchSnapshot.size;
+
+/* JOINS COUNT */
+
+const joinSnapshot = await getDocs(collection(db,"joins"));
+document.getElementById("joins").innerText = joinSnapshot.size;
+
+</script>
+
 </body>
 </html>
