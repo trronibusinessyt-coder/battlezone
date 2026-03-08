@@ -2,16 +2,37 @@
 <html>
 
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>BattleZone Tournaments</title>
 
-<link rel="stylesheet" href="style.css">
-
 <style>
 
-.t-card{
+body{
+margin:0;
+font-family:Arial;
+background:#05081c;
+color:white;
+}
+
+.topbar{
+background:#3b0066;
+padding:15px;
+font-size:20px;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.tabs{
+padding:10px;
+}
+
+.tabs button{
+margin-right:5px;
+padding:6px 10px;
+}
+
 .tournament-card{
 background:#200040;
 margin:15px;
@@ -84,7 +105,6 @@ border-radius:8px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -95,13 +115,9 @@ border-radius:8px;
 </div>
 
 <div class="tabs">
-
-<button onclick="loadTournaments('upcoming')" class="active">UPCOMING</button>
-
+<button onclick="loadTournaments('upcoming')">UPCOMING</button>
 <button onclick="loadTournaments('ongoing')">ONGOING</button>
-
 <button onclick="loadTournaments('completed')">RESULTS</button>
-
 </div>
 
 <div id="tournamentList"></div>
@@ -114,14 +130,13 @@ import { getFirestore, collection, query, where, getDocs } from "https://www.gst
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
-  authDomain: "battlezone-c7406.firebaseapp.com",
-  projectId: "battlezone-c7406",
-  storageBucket: "battlezone-c7406.firebasestorage.app",
-  messagingSenderId: "237634131988",
-  appId: "1:237634131988:web:5ca71576b370b49b2def01"
+apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
+authDomain: "battlezone-c7406.firebaseapp.com",
+projectId: "battlezone-c7406",
+storageBucket: "battlezone-c7406.appspot.com",
+messagingSenderId: "237634131988",
+appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -130,22 +145,8 @@ const db = getFirestore(app);
 const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get("mode");
 
-document.getElementById("modeTitle").innerText = mode.toUpperCase();
+document.getElementById("modeTitle").innerText = mode;
 
-
-async function loadTournaments(status){
-
-const q = query(
-collection(db,"tournaments"),
-where("mode","==",mode),
-where("status","==",status)
-);
-
-const snapshot = await getDocs(q);
-
-snapshot.forEach((doc)=>{
-
-const data = doc.data();
 
 async function loadTournaments(status){
 
@@ -177,17 +178,17 @@ html += `
 
 <div class="row">
 
-<div class="date">
+<div>
 ${data.date || '--'}<br>
 ${data.time || '--'}
 </div>
 
-<div class="prize">
+<div>
 PRIZE POOL<br>
 🪙 ${data.prize || 0}
 </div>
 
-<div class="kill">
+<div>
 PER KILL<br>
 🪙 ${data.perKill || 0}
 </div>
@@ -196,7 +197,7 @@ PER KILL<br>
 
 <div class="bottom">
 
-<div class="slots">
+<div>
 
 ${data.joined || 0}/${data.slots || 48}
 
@@ -221,25 +222,13 @@ document.getElementById("tournamentList").innerHTML = html;
 
 }
 
-document.getElementById("tournamentList").innerHTML = html;
-
+window.openTournament = function(id){
+window.location.href = "tournament-details.html?id="+id;
 }
-
-
-window.loadTournaments = loadTournaments;
-
 
 loadTournaments("upcoming");
-
-
-window.openTournament = function(id){
-
-window.location.href = "tournament-details.html?id="+id;
-
-}
 
 </script>
 
 </body>
-
 </html>
