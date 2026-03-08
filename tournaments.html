@@ -9,6 +9,75 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+.t-card{
+background:#1a0033;
+border-radius:12px;
+margin:15px;
+overflow:hidden;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.banner{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.t-body{
+padding:12px;
+}
+
+.tags{
+margin-bottom:8px;
+}
+
+.tag{
+background:#00d2ff;
+padding:4px 8px;
+border-radius:6px;
+font-size:12px;
+margin-right:5px;
+}
+
+.orange{
+background:orange;
+}
+
+.info{
+display:flex;
+justify-content:space-between;
+margin:10px 0;
+}
+
+.slots{
+margin-top:10px;
+}
+
+.bar{
+height:6px;
+background:#444;
+border-radius:4px;
+overflow:hidden;
+margin:5px 0;
+}
+
+.fill{
+height:6px;
+background:#ff6a00;
+}
+
+.slots button{
+background:#00e5ff;
+border:none;
+padding:8px 14px;
+border-radius:8px;
+font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -74,16 +143,45 @@ snapshot.forEach(doc => {
 const data = doc.data();
 
 html += `
+<div class="t-card">
 
-<div class="tournament-card">
+<img class="banner" src="images/banner.jpg">
+
+<div class="t-body">
+
+<div class="tags">
+<span class="tag">${data.team}</span>
+<span class="tag orange">${data.map}</span>
+</div>
 
 <h3>${data.title}</h3>
 
-<p>Entry Fee : ₹${data.entryFee}</p>
+<div class="info">
 
-<p>Prize : ₹${data.prize}</p>
+<div>
+<p>${data.date}</p>
+<p>${data.time}</p>
+</div>
 
-<p>Slots : ${data.slots}</p>
+<div>
+<p>PRIZE</p>
+<p>₹${data.prize}</p>
+</div>
+
+<div>
+<p>PER KILL</p>
+<p>${data.perKill}</p>
+</div>
+
+</div>
+
+<div class="slots">
+
+<span>${data.joined}/${data.slots}</span>
+
+<div class="bar">
+<div class="fill" style="width:${(data.joined/data.slots)*100}%"></div>
+</div>
 
 <button onclick="openTournament('${doc.id}')">
 JOIN
@@ -91,6 +189,8 @@ JOIN
 
 </div>
 
+</div>
+</div>
 `;
 
 });
