@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Fire Modes</title>
 
 <style>
 
 body{
-background:#070b1a;
-color:white;
-font-family:Arial;
 margin:0;
+font-family:Arial;
+background:#05081c;
+color:white;
 }
 
-.header{
-background:#4b0082;
+.topbar{
+background:#3b0066;
 padding:15px;
+font-size:22px;
 text-align:center;
-font-size:20px;
+font-weight:bold;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
 padding:15px;
 }
 
 .card{
-background:#141a33;
-border-radius:12px;
+background:#0f1435;
+border-radius:10px;
 overflow:hidden;
 text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.6);
 }
 
 .card img{
@@ -40,22 +42,23 @@ height:120px;
 object-fit:cover;
 }
 
-.card h3{
-padding:10px;
-font-size:16px;
+.card p{
+margin:10px;
+font-weight:bold;
+color:#00e5ff;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="header">
-Free Fire Modes
+<div class="topbar">
+Game Victory
 </div>
 
 <div class="grid" id="modeList"></div>
+
 
 <script type="module">
 
@@ -66,7 +69,7 @@ const firebaseConfig = {
 apiKey: "AIzaSyBNS_qFwJxl3yD75mWguLS2zESVQ8W6Vbg",
 authDomain: "battlezone-c7406.firebaseapp.com",
 projectId: "battlezone-c7406",
-storageBucket: "battlezone-c7406.firebasestorage.app",
+storageBucket: "battlezone-c7406.appspot.com",
 messagingSenderId: "237634131988",
 appId: "1:237634131988:web:5ca71576b370b49b2def01"
 };
@@ -74,24 +77,21 @@ appId: "1:237634131988:web:5ca71576b370b49b2def01"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const modeList = document.getElementById("modeList");
+
 const snapshot = await getDocs(collection(db,"modes"));
 
-snapshot.forEach(doc=>{
+snapshot.forEach((doc)=>{
 
 const data = doc.data();
 
-if(data.game === "freefire"){
+if(data.game === "freefire" && data.status === "active"){
 
-document.getElementById("modeList").innerHTML += `
-
-<div class="card" onclick="openMode('${data.modeName}')">
-
-<img src="${data.image}">
-
-<h3>${data.modeName}</h3>
-
+modeList.innerHTML += `
+<div class="card" onclick="openMode('${doc.id}')">
+<img src="images/${data.image}">
+<p>${data.modeName}</p>
 </div>
-
 `;
 
 }
@@ -100,7 +100,7 @@ document.getElementById("modeList").innerHTML += `
 
 window.openMode = function(mode){
 
-location.href = "tournaments.html?mode="+mode;
+window.location.href = "tournament.html?mode="+mode;
 
 }
 
