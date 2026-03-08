@@ -184,8 +184,8 @@ const db = getFirestore(app);
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const mode = urlParams.get("mode") || localStorage.getItem("gameMode");
-
+const team = urlParams.get("mode");
+const mode = "fullmap";
 async function loadTournaments(status){
 
 let html="";
