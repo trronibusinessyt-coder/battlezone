@@ -195,7 +195,8 @@ let html="";
 const q=query(
 collection(db,"tournaments"),
 where("mode","==",mode),
-where("team","==",team)
+where("team","==",team),
+where("status","==",status)
 );
 
 const snapshot=await getDocs(q);
