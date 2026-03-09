@@ -662,8 +662,8 @@ font-size:14px;
 .important-sub{
 color:#9aa0a6;
 font-size:12px;
+margin-top:-2px;
 margin-left:15px;
-margin-top:2px;
 }
 
 /* QUICK ACTION FIX */
@@ -709,5 +709,16 @@ margin-bottom:6px;
 }
 
 .contest-card p{
+font-size:14px;
+}
+
+.important-title{
+font-size:16px;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.important-title span{
 font-size:14px;
 }
