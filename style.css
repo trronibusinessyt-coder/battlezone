@@ -722,3 +722,30 @@ gap:6px;
 .important-title span{
 font-size:14px;
 }
+
+/* WALLET GLOW EFFECT */
+
+.wallet-badge{
+display:flex;
+align-items:center;
+gap:6px;
+background:linear-gradient(90deg,#7b2ff7,#00c6ff);
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+color:white;
+box-shadow:0 0 10px rgba(0,198,255,0.6);
+animation:walletGlow 2s infinite alternate;
+}
+
+@keyframes walletGlow{
+
+0%{
+box-shadow:0 0 6px rgba(0,198,255,0.4);
+}
+
+100%{
+box-shadow:0 0 14px rgba(0,198,255,0.9);
+}
+
+}
