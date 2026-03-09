@@ -1,4 +1,4 @@
-html,body{
+html, body{
 max-width:100%;
 overflow-x:hidden;
 }
@@ -141,14 +141,14 @@ margin:0;
 color:white;
 }
 
-.quick-btn:hover{
-transform:translateY(-3px);
-box-shadow:0 0 18px #9d4dff;
-}
-
 .quick-btn i{
 font-size:22px;
 margin-bottom:5px;
+}
+
+.quick-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 18px #9d4dff;
 }
 
 .quick-actions{
@@ -157,14 +157,6 @@ justify-content:space-around;
 margin:15px 10px;
 width:100%;
 box-sizing:border-box;
-}
-
-/* FLOAT ANIMATION */
-
-@keyframes floatIcon{
-0%{ transform: translateY(0); }
-50%{ transform: translateY(-5px); }
-100%{ transform: translateY(0); }
 }
 
 /* SECTION TITLE */
@@ -398,6 +390,54 @@ display:flex;
 justify-content:space-between;
 }
 
+/* BANNER SLIDER */
+
+.banner-slider{
+width:92%;
+margin:10px auto;
+height:130px;
+border-radius:14px;
+overflow:hidden;
+position:relative;
+}
+
+.banner-slider img{
+width:100%;
+height:120px;
+object-fit:cover;
+position:absolute;
+opacity:0;
+animation:slideBanner 12s infinite;
+}
+
+.banner-slider img:nth-child(1){animation-delay:0s;}
+.banner-slider img:nth-child(2){animation-delay:4s;}
+.banner-slider img:nth-child(3){animation-delay:8s;}
+
+@keyframes slideBanner{
+0%{opacity:0;}
+10%{opacity:1;}
+30%{opacity:1;}
+40%{opacity:0;}
+100%{opacity:0;}
+}
+
+@keyframes floatIcon{
+0%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+100%{transform:translateY(0);}
+}
+
+/* LIVE COUNTER */
+
+.live-counter{
+margin-left:15px;
+color:#00e5ff;
+font-weight:bold;
+font-size:14px;
+text-shadow:0 0 10px #00e5ff;
+}
+
 /* COIN ICON */
 
 .coin-icon{
@@ -408,7 +448,7 @@ animation:coinGlow 2s infinite;
 }
 
 @keyframes coinGlow{
-0%{ transform:rotate(0deg); }
-50%{ transform:rotate(15deg); }
-100%{ transform:rotate(0deg); }
+0%{transform:rotate(0deg);}
+50%{transform:rotate(15deg);}
+100%{transform:rotate(0deg);}
 }
