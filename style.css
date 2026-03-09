@@ -575,3 +575,24 @@ font-size:12px;
 color:#9aa0a6;
 margin-top:-5px;
 }
+
+.wallet-badge{
+display:flex;
+align-items:center;
+background:linear-gradient(90deg,#7209b7,#00c6ff);
+padding:5px 10px;
+border-radius:18px;
+margin-right:8px;
+font-size:12px;
+box-shadow:0 0 10px rgba(0,198,255,0.7);
+gap:5px;
+}
+
+.wallet-badge button{
+background:linear-gradient(90deg,#00c6ff,#7b2ff7);
+border:none;
+padding:4px 8px;
+border-radius:10px;
+color:white;
+font-weight:bold;
+}
