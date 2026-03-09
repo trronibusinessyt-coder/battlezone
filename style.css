@@ -737,59 +737,156 @@ transform:rotate(0deg);
 
 }
 
+/* ================= PROFILE PAGE ================= */
+
 .profile-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px;
-background:#200040;
+background:linear-gradient(135deg,#240046,#3c096c);
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
 }
 
 .profile-info{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
 .avatar{
 width:60px;
+height:60px;
 border-radius:50%;
+border:2px solid #00e5ff;
+box-shadow:0 0 10px #00e5ff;
 }
 
 .verified{
 color:#36d7c9;
-font-size:14px;
+font-size:13px;
+letter-spacing:1px;
 }
 
 .wallet-mini{
-background:#6a00ff;
-padding:8px 15px;
+background:linear-gradient(90deg,#7209b7,#00c6ff);
+padding:6px 14px;
 border-radius:20px;
+font-size:13px;
+display:flex;
+align-items:center;
+gap:6px;
+box-shadow:0 0 10px rgba(0,198,255,0.6);
 }
+
+/* ================= PROFILE STATS ================= */
 
 .stats{
 display:flex;
 justify-content:space-around;
-background:#200040;
+background:linear-gradient(145deg,#1c2541,#3a0ca3);
 margin:20px;
-padding:15px;
-border-radius:12px;
+padding:18px;
+border-radius:16px;
+box-shadow:0 0 12px rgba(0,0,0,0.6);
 }
+
+.stats div{
+text-align:center;
+}
+
+.stats h3{
+margin:0;
+font-size:20px;
+color:#00e5ff;
+}
+
+.stats p{
+margin:2px 0;
+font-size:13px;
+color:#aaa;
+}
+
+/* ================= PROFILE MENU ================= */
 
 .menu{
 margin:20px;
 }
 
 .menu-item{
-display:block;
-background:#200040;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(145deg,#1c2541,#3a0ca3);
 padding:15px;
-margin-bottom:10px;
-border-radius:10px;
+margin-bottom:12px;
+border-radius:12px;
 text-decoration:none;
 color:white;
+font-size:14px;
+transition:0.3s;
+}
+
+.menu-item:hover{
+transform:translateY(-3px);
+box-shadow:0 0 10px rgba(0,198,255,0.6);
 }
 
 .logout{
-background:#ff4d4d;
+background:linear-gradient(90deg,#ff3c3c,#ff0000);
+}
+
+/* ================= WALLET PAGE ================= */
+
+.wallet-card{
+background:linear-gradient(145deg,#1c2541,#3a0ca3);
+margin:20px;
+padding:20px;
+border-radius:16px;
+box-shadow:0 0 12px rgba(0,0,0,0.6);
+text-align:center;
+}
+
+.wallet-card h1{
+color:#00e5ff;
+font-size:28px;
+margin:10px 0;
+}
+
+.wallet-actions{
+margin:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.wallet-actions input{
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+.wallet-actions button{
+padding:12px;
+background:linear-gradient(90deg,#7b2ff7,#00c6ff);
+border:none;
+border-radius:10px;
+font-weight:bold;
+color:white;
+}
+
+.history{
+margin:20px;
+background:linear-gradient(145deg,#1c2541,#3a0ca3);
+padding:15px;
+border-radius:12px;
+}
+
+.history p{
+font-size:13px;
+margin:6px 0;
+border-bottom:1px solid rgba(255,255,255,0.1);
+padding-bottom:4px;
 }
