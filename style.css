@@ -45,31 +45,6 @@ border:2px solid #00e5ff;
 box-shadow:0 0 10px #00e5ff;
 }
 
-.wallet{
-display:flex;
-align-items:center;
-}
-
-.wallet span{
-display:flex;
-align-items:center;
-background:linear-gradient(90deg,#7209b7,#00c6ff);
-padding:5px 10px;
-border-radius:18px;
-margin-right:8px;
-font-size:12px;
-box-shadow:0 0 10px rgba(0,198,255,0.7);
-}
-
-.wallet button{
-background:linear-gradient(90deg,#00c6ff,#7b2ff7);
-border:none;
-padding:4px 8px;
-border-radius:10px;
-color:white;
-font-weight:bold;
-}
-
 /* RULES */
 
 .rules{
@@ -102,14 +77,6 @@ border-radius:14px;
 }
 
 /* QUICK MENU */
-
-.quick-menu{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-padding:10px 14px;
-margin-top:12px;
-}
 
 .quick-btn{
 width:70px;
