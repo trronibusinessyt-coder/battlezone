@@ -452,3 +452,51 @@ animation:coinGlow 2s infinite;
 50%{transform:rotate(15deg);}
 100%{transform:rotate(0deg);}
 }
+
+/* GAMEVICTORY MY CONTEST STYLE */
+
+.contest-card{
+
+flex:1;
+
+background:linear-gradient(145deg,#0d001f,#2a0050);
+
+border-radius:18px;
+
+text-align:center;
+
+padding:25px 10px;
+
+box-shadow:
+0 0 15px rgba(123,47,247,0.4),
+inset 0 0 10px rgba(255,255,255,0.05);
+
+transition:0.3s;
+
+}
+
+.contest-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 20px #7b2ff7;
+
+}
+
+.contest-icon{
+
+font-size:40px;
+
+color:#36d7c9;
+
+margin-bottom:10px;
+
+}
+
+.contest-card p{
+
+font-size:16px;
+
+font-weight:600;
+
+}
