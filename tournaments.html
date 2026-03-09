@@ -185,12 +185,19 @@ const db = getFirestore(app);
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const team = urlParams.get("mode");
+let team = urlParams.get("mode");
+
+if(!team){
+team = "solo";
+}
+
 const mode = "fullmap";
 
 async function loadTournaments(status){
 
 let html="";
+
+alert("MODE:"+mode+" TEAM:"+team+" STATUS:"+status);
 
 const q=query(
 collection(db,"tournaments"),
