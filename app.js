@@ -149,7 +149,7 @@ if(!user) return;
 
 document.getElementById("username").innerText=user.name;
 
-document.getElementById("topBalance").innerText = "🪙 " + balance;
+document.getElementById("balance").innerText = "🪙 " + user.wallet;
 
 let history=document.getElementById("history");
 
