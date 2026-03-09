@@ -500,3 +500,12 @@ font-size:16px;
 font-weight:600;
 
 }
+
+/* MY CONTEST GRID FIX */
+
+.contest-menu{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin:15px;
+}
