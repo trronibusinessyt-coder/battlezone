@@ -1,21 +1,23 @@
-/* GLOBAL */
+html,body{
+max-width:100%;
+overflow-x:hidden;
+}
 
 *{
 box-sizing:border-box;
-margin:0;
-padding:0;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:radial-gradient(circle at top,#0a0f1c,#03040a);
+margin:0;
+font-family:Arial;
+background: radial-gradient(circle at top,#0a0f1c,#03040a);
 color:white;
-overflow-x:hidden;
 padding-bottom:90px;
+overflow-x:hidden;
+width:100%;
 }
 
-
-/* TOPBAR */
+/* TOP BAR */
 
 .topbar{
 display:flex;
@@ -24,6 +26,9 @@ align-items:center;
 padding:10px 12px;
 background:linear-gradient(90deg,#240046,#3c096c);
 height:60px;
+overflow:hidden;
+width:100%;
+box-sizing:border-box;
 }
 
 .profile{
@@ -37,319 +42,35 @@ height:34px;
 border-radius:50%;
 margin-right:8px;
 border:2px solid #00e5ff;
-box-shadow:0 0 8px #00e5ff;
+box-shadow:0 0 10px #00e5ff;
 }
-
-
-/* WALLET */
 
 .wallet{
 display:flex;
 align-items:center;
-gap:6px;
 }
 
 .wallet span{
+display:flex;
+align-items:center;
 background:linear-gradient(90deg,#7209b7,#00c6ff);
 padding:5px 10px;
 border-radius:18px;
+margin-right:8px;
 font-size:12px;
-display:flex;
-align-items:center;
-box-shadow:0 0 8px rgba(0,198,255,0.6);
+box-shadow:0 0 10px rgba(0,198,255,0.7);
 }
 
 .wallet button{
 background:linear-gradient(90deg,#00c6ff,#7b2ff7);
 border:none;
-padding:5px 10px;
+padding:4px 8px;
 border-radius:10px;
 color:white;
 font-weight:bold;
 }
 
-
-/* BANNER */
-
-.main-banner{
-padding:0 10px;
-height:90px;
-}
-
-.main-banner img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:14px;
-}
-
-
-/* QUICK MENU */
-
-.quick-menu{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-padding:10px;
-}
-
-.quick-btn{
-background:linear-gradient(180deg,#5a00ff,#8a2cff);
-border-radius:16px;
-height:80px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-box-shadow:0 6px 15px rgba(0,0,0,0.6);
-font-size:12px;
-transition:0.3s;
-}
-
-.quick-btn img{
-width:28px;
-margin-bottom:6px;
-}
-
-
-/* GAME BANNER */
-
-.game-banner{
-background:#1c2541;
-border-radius:16px;
-height:110px;
-position:relative;
-overflow:hidden;
-box-shadow:0 0 10px rgba(0,198,255,0.5);
-}
-
-.game-banner img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-
-/* TOURNAMENT CARD */
-
-.card{
-background:linear-gradient(135deg,#1c2541,#3a0ca3);
-margin:15px;
-padding:15px;
-border-radius:15px;
-box-shadow:0 0 12px rgba(0,0,0,0.5);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-margin-bottom:10px;
-}
-
-.card button{
-width:100%;
-padding:10px;
-margin-top:10px;
-background:#00c6ff;
-border:none;
-border-radius:10px;
-font-weight:bold;
-}
-
-
-/* SLOT GRID */
-
-.slot-grid{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:10px;
-padding:20px;
-}
-
-.slot{
-background:#1c2541;
-padding:15px;
-text-align:center;
-border-radius:10px;
-font-weight:bold;
-}
-
-.slot.active{
-background:#00c6ff;
-color:black;
-}
-
-.slot.taken{
-background:red;
-pointer-events:none;
-}
-
-
-/* PROFILE HEADER */
-
-.profile-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px;
-background:linear-gradient(135deg,#240046,#3c096c);
-border-bottom-left-radius:20px;
-border-bottom-right-radius:20px;
-}
-
-.profile-info{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.avatar{
-width:60px;
-height:60px;
-border-radius:50%;
-border:2px solid #00e5ff;
-}
-
-.verified{
-color:#36d7c9;
-font-size:13px;
-}
-
-.wallet-mini{
-background:linear-gradient(90deg,#7209b7,#00c6ff);
-padding:6px 14px;
-border-radius:20px;
-font-size:13px;
-display:flex;
-align-items:center;
-gap:6px;
-}
-
-
-/* PROFILE STATS */
-
-.stats{
-display:flex;
-justify-content:space-around;
-background:linear-gradient(145deg,#1c2541,#3a0ca3);
-margin:20px;
-padding:18px;
-border-radius:16px;
-}
-
-.stats div{
-text-align:center;
-}
-
-.stats h3{
-color:#00e5ff;
-font-size:20px;
-}
-
-.stats p{
-font-size:13px;
-color:#aaa;
-}
-
-
-/* PROFILE MENU */
-
-.menu{
-margin:20px;
-}
-
-.menu-item{
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:linear-gradient(145deg,#1c2541,#3a0ca3);
-padding:15px;
-margin-bottom:12px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-size:14px;
-}
-
-.logout{
-background:linear-gradient(90deg,#ff3c3c,#ff0000);
-}
-
-
-/* WALLET */
-
-.wallet-card{
-background:linear-gradient(145deg,#1c2541,#3a0ca3);
-margin:20px;
-padding:20px;
-border-radius:16px;
-text-align:center;
-}
-
-.wallet-card h1{
-color:#00e5ff;
-font-size:28px;
-}
-
-.wallet-actions{
-margin:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.wallet-actions input{
-padding:12px;
-border-radius:10px;
-border:none;
-}
-
-.wallet-actions button{
-padding:12px;
-background:linear-gradient(90deg,#7b2ff7,#00c6ff);
-border:none;
-border-radius:10px;
-font-weight:bold;
-color:white;
-}
-
-
-/* BOTTOM NAV */
-
-.bottom-nav{
-position:fixed;
-bottom:0;
-width:100%;
-background:linear-gradient(180deg,#240046,#3c096c);
-display:flex;
-justify-content:space-around;
-padding:12px 0;
-border-top-left-radius:20px;
-border-top-right-radius:20px;
-box-shadow:0 -5px 20px rgba(0,0,0,0.6);
-}
-
-.nav-btn{
-background:none;
-border:none;
-color:white;
-text-align:center;
-font-size:12px;
-opacity:0.8;
-}
-
-.nav-btn span{
-font-size:18px;
-display:block;
-}
-
-.nav-btn.active{
-color:#00e5ff;
-font-weight:bold;
-}
-
-/* HOME PAGE FIX */
+/* RULES */
 
 .rules{
 background:linear-gradient(90deg,#4e00ff,#7b2ff7);
@@ -359,7 +80,10 @@ border-radius:12px;
 text-align:center;
 font-size:13px;
 font-weight:bold;
+max-width:90%;
 }
+
+/* COMPACT BANNER */
 
 .main-banner{
 width:100%;
@@ -373,44 +97,101 @@ overflow:hidden;
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
 border-radius:14px;
 }
 
-.banner-slider{
-width:92%;
-margin:10px auto;
-height:130px;
-border-radius:14px;
-overflow:hidden;
-position:relative;
+/* QUICK MENU */
+
+.quick-menu{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+padding:10px 14px;
+margin-top:12px;
 }
 
-.banner-slider img{
+.quick-btn{
+width:70px;
+height:70px;
+background:linear-gradient(180deg,#7b2ff7,#2c0b5e);
+border-radius:15px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+text-decoration:none;
+box-shadow:0 0 12px #7b2ff7;
+font-size:12px;
+animation: floatIcon 3s ease-in-out infinite;
+transition:0.3s;
+}
+
+.quick-btn img{
+width:28px;
+height:28px;
+margin-bottom:6px;
+filter:brightness(1.2);
+}
+
+.quick-btn p{
+font-size:12px;
+margin:0;
+color:white;
+}
+
+.quick-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 18px #9d4dff;
+}
+
+.quick-btn i{
+font-size:22px;
+margin-bottom:5px;
+}
+
+.quick-actions{
+display:flex;
+justify-content:space-around;
+margin:15px 10px;
 width:100%;
-height:120px;
-object-fit:cover;
-position:absolute;
-opacity:0;
-animation:slideBanner 12s infinite;
+box-sizing:border-box;
 }
 
-.banner-slider img:nth-child(1){animation-delay:0s;}
-.banner-slider img:nth-child(2){animation-delay:4s;}
-.banner-slider img:nth-child(3){animation-delay:8s;}
+/* FLOAT ANIMATION */
 
-@keyframes slideBanner{
-0%{opacity:0;}
-10%{opacity:1;}
-30%{opacity:1;}
-40%{opacity:0;}
-100%{opacity:0;}
+@keyframes floatIcon{
+0%{ transform: translateY(0); }
+50%{ transform: translateY(-5px); }
+100%{ transform: translateY(0); }
 }
+
+/* SECTION TITLE */
+
+.section-title{
+margin-left:15px;
+margin-top:20px;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.glow{
+color:#00e5ff;
+text-shadow:0 0 15px #00e5ff;
+}
+
+/* EXCLUSIVE GAME */
 
 .exclusive{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:8px;
 padding:8px;
+}
+
+.exclusive::-webkit-scrollbar{
+display:none;
 }
 
 .game-banner{
@@ -420,6 +201,12 @@ height:110px;
 position:relative;
 overflow:hidden;
 box-shadow:0 0 15px rgba(0,198,255,0.5);
+transition:0.3s;
+}
+
+.game-banner:hover{
+transform:scale(1.03);
+box-shadow:0 0 20px #00e5ff;
 }
 
 .game-banner img{
@@ -449,4 +236,179 @@ border:none;
 padding:4px 8px;
 border-radius:10px;
 font-size:11px;
+}
+
+/* TOURNAMENT CARD */
+
+.card{
+background:linear-gradient(135deg,#1c2541,#3a0ca3);
+margin:15px;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+box-shadow:0 0 15px rgba(0,198,255,0.7);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.card h3{
+margin:5px 0;
+}
+
+.card p{
+font-size:14px;
+margin:3px 0;
+}
+
+.card button{
+width:100%;
+padding:10px;
+margin-top:10px;
+background:#00c6ff;
+border:none;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* SHARE BUTTON */
+
+.share{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:15px;
+}
+
+.share button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#7b2ff7,#00c6ff);
+color:white;
+font-weight:bold;
+}
+
+.whatsapp{
+background:#25d366 !important;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:linear-gradient(180deg,#240046,#3c096c);
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+border-top-left-radius:20px;
+border-top-right-radius:20px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.6);
+}
+
+.nav-btn{
+background:none;
+border:none;
+color:white;
+text-align:center;
+font-size:12px;
+opacity:0.8;
+}
+
+.nav-btn span{
+font-size:18px;
+display:block;
+}
+
+.nav-btn.active{
+color:#00e5ff;
+font-weight:bold;
+}
+
+/* SLOT SYSTEM */
+
+.slot-grid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:10px;
+padding:20px;
+}
+
+.slot{
+background:#1c2541;
+padding:15px;
+text-align:center;
+border-radius:10px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.slot.active{
+background:#00c6ff;
+color:black;
+}
+
+.slot.taken{
+background:red;
+pointer-events:none;
+}
+
+/* JOIN FORM */
+
+.join-form{
+padding:20px;
+}
+
+.join-form input{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:8px;
+border:none;
+}
+
+.join-form button{
+width:100%;
+padding:12px;
+background:#7b2ff7;
+border:none;
+border-radius:8px;
+color:white;
+font-weight:bold;
+}
+
+/* MEMBER LIST */
+
+.member{
+background:#1c2541;
+margin:10px 15px;
+padding:10px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+}
+
+/* COIN ICON */
+
+.coin-icon{
+width:18px;
+margin-right:4px;
+filter:drop-shadow(0 0 5px gold);
+animation:coinGlow 2s infinite;
+}
+
+@keyframes coinGlow{
+0%{ transform:rotate(0deg); }
+50%{ transform:rotate(15deg); }
+100%{ transform:rotate(0deg); }
 }
