@@ -187,9 +187,9 @@ const urlParams = new URLSearchParams(window.location.search);
 
 let team = urlParams.get("mode");
 
-if(!team){
-team = "solo";
-}
+if(team==="fullmapsolo") team="solo";
+if(team==="fullmapduo") team="duo";
+if(team==="fullmapsquad") team="squad";
 
 const mode = "fullmap";
 
