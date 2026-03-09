@@ -202,8 +202,7 @@ alert("MODE:"+mode+" TEAM:"+team+" STATUS:"+status);
 const q=query(
 collection(db,"tournaments"),
 where("mode","==",mode),
-where("team","==",team),
-where("status","==",status)
+where("team","==",team)
 );
 
 const snapshot=await getDocs(q);
