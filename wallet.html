@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wallet</title>
 <link rel="stylesheet" href="style.css">
-</head>
-<body onload="loadWallet()">
+</head><body onload="loadWallet()"><div class="container"><h2>My Wallet</h2><div class="wallet-card"><h3>Total Balance</h3>
+<h1 id="balance"></h1></div><div class="wallet-actions"><input type="number" id="amount" placeholder="Enter Amount"><button onclick="addMoney()">Add Coins</button>
 
-<div class="container">
-<h2>My Wallet</h2>
-
-<div class="card">
-<h3 id="username"></h3>
-<h2 id="balance"></h2>
-</div>
-
-<div class="card">
-<input type="number" id="amount" placeholder="Enter Amount">
-<button onclick="addMoney()">Add Money</button>
-</div>
-
-<div class="card">
-<h3>History</h3>
-<div id="history"></div>
-</div>
-</div>
-
-<div class="bottom-nav">
+</div><div class="history"><h3>Transactions</h3><div id="history"></div></div></div><div class="bottom-nav">
 <a href="index.html">Home</a>
 <a href="wallet.html">Wallet</a>
 <a href="rank.html">Rank</a>
-<a href="profile.html">Profile</a>
-</div>
-
-<script src="app.js"></script>
-</body>
+<a href="profile.html">Account</a>
+</div><script src="app.js"></script></body>
 </html>
