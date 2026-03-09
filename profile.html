@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profile</title>
 <link rel="stylesheet" href="style.css">
-</head>
-<body onload="loadWallet()">
+</head><body onload="loadWallet()"><div class="profile-header"><div class="profile-info">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="avatar"><div>
+<h2 id="username"></h2>
+<p class="verified">KYC Verified</p>
+</div></div><div class="wallet-mini">
+<span id="balance"></span>
+<a href="wallet.html">+</a>
+</div></div><div class="stats"><div>
+<h3>0</h3>
+<p>Matches</p>
+</div><div>
+<h3>0</h3>
+<p>Kills</p>
+</div><div>
+<h3>0</h3>
+<p>Amount Won</p>
+</div></div><div class="menu"><a href="wallet.html" class="menu-item">My Wallet</a>
+<a href="transactions.html" class="menu-item">Transactions</a>
+<a href="leaderboard.html" class="menu-item">Leaderboard</a>
+<a href="support.html" class="menu-item">Customer Support</a>
+<a href="#" onclick="logout()" class="menu-item logout">Logout</a>
 
-<div class="container">
-<h2>Profile</h2>
-
-<div class="card">
-<h3 id="username"></h3>
-<h2 id="balance"></h2>
-</div>
-
-<button onclick="logout()">Logout</button>
-</div>
-
-<div class="bottom-nav">
+</div><div class="bottom-nav">
 <a href="index.html">Home</a>
 <a href="wallet.html">Wallet</a>
 <a href="rank.html">Rank</a>
-<a href="profile.html">Profile</a>
-</div>
-
-<script src="app.js"></script>
-</body>
+<a href="profile.html">Account</a>
+</div><script src="app.js"></script></body>
 </html>
