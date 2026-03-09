@@ -207,8 +207,7 @@ let topBal=document.getElementById("topBalance");
 
 if(topBal){
 
-topBal.innerHTML =
-'<img src="https://cdn-icons-png.flaticon.com/512/138/138292.png" class="coin-icon">' + user.wallet;
+topBal.innerText = user.wallet;
 
 }
 
@@ -553,8 +552,7 @@ count = value;
 clearInterval(interval);
 }
 
-el.innerHTML = '<img src="https://cdn-icons-png.flaticon.com/512/138/138292.png" class="coin-icon">' + count.toFixed(0);
-
+el.innerText = count.toFixed(0);
 },50);
 
 }
