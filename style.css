@@ -649,17 +649,17 @@ transform:scale(1.2);
 /* NOTIFICATION ICON */
 
 .notify-icon{
-background:linear-gradient(145deg,#240046,#5a189a);
-width:36px;
-height:36px;
+background:linear-gradient(145deg,#4e00ff,#7209b7);
+width:40px;
+height:40px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
-color:#00e5ff;
-font-size:18px;
+color:white;
+font-size:20px;
 text-decoration:none;
-box-shadow:0 0 10px rgba(0,198,255,0.6);
+box-shadow:0 0 10px rgba(0,0,0,0.4);
 position:relative;
 }
 
@@ -668,10 +668,10 @@ position:relative;
 .notify-icon::after{
 content:"";
 position:absolute;
-top:4px;
-right:4px;
-width:6px;
-height:6px;
+top:5px;
+right:5px;
+width:8px;
+height:8px;
 background:red;
 border-radius:50%;
 }
