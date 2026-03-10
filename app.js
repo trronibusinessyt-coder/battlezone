@@ -551,7 +551,7 @@ el.innerText = count.toFixed(0);
 setTimeout(animateBalance,500);
 
 
-/* SMOOTH BANNER SLIDER */
+/* ===== PRO INFINITE SLIDER ===== */
 
 const track = document.querySelector(".banner-track");
 const slides = document.querySelectorAll(".banner-slide");
@@ -561,27 +561,32 @@ if(track){
 
 let index = 0;
 let startX = 0;
-let total = slides.length;
+let auto;
+
+/* UPDATE SLIDER */
 
 function updateSlider(){
 
-track.style.transition="transform 0.5s ease";
-track.style.transform="translateX(-"+index*100+"%)";
-
-/* DOT UPDATE */
+track.style.transform =
+"translate3d(-"+index*100+"%,0,0)";
 
 dots.forEach(d=>d.classList.remove("active"));
+
+if(dots[index]){
 dots[index].classList.add("active");
+}
 
 }
 
-/* AUTO RIGHT SLIDE */
+/* AUTOPLAY */
 
-setInterval(()=>{
+function startAuto(){
+
+auto = setInterval(()=>{
 
 index++;
 
-if(index >= total){
+if(index >= slides.length){
 index = 0;
 }
 
@@ -589,10 +594,22 @@ updateSlider();
 
 },4000);
 
+}
+
+/* STOP AUTOPLAY */
+
+function stopAuto(){
+clearInterval(auto);
+}
+
 /* TOUCH START */
 
 track.addEventListener("touchstart",(e)=>{
+
+stopAuto();
+
 startX = e.touches[0].clientX;
+
 });
 
 /* TOUCH END */
@@ -601,25 +618,26 @@ track.addEventListener("touchend",(e)=>{
 
 let endX = e.changedTouches[0].clientX;
 
-/* SWIPE LEFT */
-
 if(startX - endX > 50){
 index++;
 }
-
-/* SWIPE RIGHT */
 
 if(endX - startX > 50){
 index--;
 }
 
-if(index >= total) index = 0;
-if(index < 0) index = total - 1;
+if(index >= slides.length) index = 0;
+if(index < 0) index = slides.length - 1;
 
 updateSlider();
+
+startAuto();
 
 });
 
+/* INIT */
+
 updateSlider();
+startAuto();
 
 }
