@@ -676,9 +676,9 @@ margin-top:25px;
 .profile-header{
 position:sticky;
 top:60px;
-z-index:900;
+z-index:1000;
 background: radial-gradient(circle at top,#0a0f1c,#03040a);
-padding-bottom:10px;
+padding-bottom:15px;
 }
 
 .profile-avatar{
