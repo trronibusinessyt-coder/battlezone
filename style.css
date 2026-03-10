@@ -467,21 +467,22 @@ margin-top:2px;
 .top-actions{
 display:flex;
 align-items:center;
-gap:8px;
+gap:12px;
+margin-right:6px;
 }
 
 .support-icon{
 background:linear-gradient(145deg,#4e00ff,#7209b7);
-width:30px;
-height:30px;
+width:36px;
+height:36px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
 color:#00e5ff;
-font-size:14px;
+font-size:18px;
 text-decoration:none;
-box-shadow:0 0 8px rgba(0,198,255,0.5);
+box-shadow:0 0 10px rgba(0,198,255,0.7);
 }
 
 /* QUICK ACTION FIX */
@@ -535,13 +536,13 @@ font-size:14px;
 .wallet-badge{
 display:flex;
 align-items:center;
-gap:6px;
+gap:8px;
 background:linear-gradient(90deg,#7b2ff7,#00c6ff);
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
+padding:7px 14px;
+border-radius:24px;
+font-size:15px;
 color:white;
-box-shadow:0 0 10px rgba(0,198,255,0.6);
+box-shadow:0 0 12px rgba(0,198,255,0.7);
 animation:walletGlow 2s infinite alternate;
 }
 
