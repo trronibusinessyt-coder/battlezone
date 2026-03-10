@@ -467,8 +467,8 @@ margin-top:2px;
 .top-actions{
 display:flex;
 align-items:center;
-gap:12px;
-margin-right:6px;
+gap:14px;
+margin-right:5px;
 }
 
 .support-icon{
@@ -644,4 +644,34 @@ transition:0.3s;
 background:#00e5ff;
 opacity:1;
 transform:scale(1.2);
+}
+
+/* NOTIFICATION ICON */
+
+.notify-icon{
+background:linear-gradient(145deg,#240046,#5a189a);
+width:36px;
+height:36px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+color:#00e5ff;
+font-size:18px;
+text-decoration:none;
+box-shadow:0 0 10px rgba(0,198,255,0.6);
+position:relative;
+}
+
+/* notification dot */
+
+.notify-icon::after{
+content:"";
+position:absolute;
+top:4px;
+right:4px;
+width:6px;
+height:6px;
+background:red;
+border-radius:50%;
 }
