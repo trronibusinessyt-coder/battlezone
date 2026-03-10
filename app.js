@@ -551,7 +551,7 @@ el.innerText = count.toFixed(0);
 setTimeout(animateBalance,500);
 
 
-/* PRO SLIDER */
+/* SMOOTH BANNER SLIDER */
 
 const track = document.querySelector(".banner-track");
 const slides = document.querySelectorAll(".banner-slide");
@@ -563,16 +563,10 @@ let index = 0;
 let startX = 0;
 let total = slides.length;
 
-/* UPDATE SLIDER */
-
 function updateSlider(){
 
-track.style.transform = "translateX(-"+index*100+"%)";
-
-/* 3D ACTIVE */
-
-slides.forEach(s=>s.classList.remove("active"));
-slides[index].classList.add("active");
+track.style.transition="transform 0.5s ease";
+track.style.transform="translateX(-"+index*100+"%)";
 
 /* DOT UPDATE */
 
@@ -581,14 +575,18 @@ dots[index].classList.add("active");
 
 }
 
-/* AUTOPLAY */
+/* AUTO RIGHT SLIDE */
 
 setInterval(()=>{
+
 index++;
-if(index>=total){
-index=0;
+
+if(index >= total){
+index = 0;
 }
+
 updateSlider();
+
 },4000);
 
 /* TOUCH START */
@@ -603,22 +601,24 @@ track.addEventListener("touchend",(e)=>{
 
 let endX = e.changedTouches[0].clientX;
 
+/* SWIPE LEFT */
+
 if(startX - endX > 50){
 index++;
 }
+
+/* SWIPE RIGHT */
 
 if(endX - startX > 50){
 index--;
 }
 
-if(index>=total) index=0;
-if(index<0) index=total-1;
+if(index >= total) index = 0;
+if(index < 0) index = total - 1;
 
 updateSlider();
 
 });
-
-/* FIRST LOAD */
 
 updateSlider();
 
