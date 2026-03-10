@@ -731,7 +731,8 @@ background:#444;
 /* PROFILE MENU */
 
 .profile-menu{
-margin:15px;
+margin:20px 15px;
+margin-top:20px;
 }
 
 .menu-item{
