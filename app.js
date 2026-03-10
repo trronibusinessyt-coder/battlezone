@@ -551,23 +551,27 @@ el.innerText = count.toFixed(0);
 setTimeout(animateBalance,500);
 
 
-/* SWIPE BANNER SLIDER */
+/* PRO BANNER SLIDER */
 
-let slider = document.querySelector(".slides");
-let dots = document.querySelectorAll(".dot");
+const slider = document.querySelector(".slides");
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 
 if(slider){
 
 let index = 0;
 let startX = 0;
+let total = slides.length;
 
-let total = document.querySelectorAll(".slide").length;
+/* SHOW SLIDE */
 
 function showSlide(){
 
-slider.style.transform = "translateX(-" + index * 100 + "%)";
+slider.style.transform = "translateX(-"+index*100+"%)";
 
-dots.forEach(d=>d.classList.remove("active"));
+/* DOT UPDATE */
+
+dots.forEach(dot=>dot.classList.remove("active"));
 
 if(dots[index]){
 dots[index].classList.add("active");
@@ -579,19 +583,22 @@ dots[index].classList.add("active");
 
 setInterval(()=>{
 index++;
-if(index>=total){
-index=0;
+
+if(index >= total){
+index = 0;
 }
+
 showSlide();
+
 },4000);
 
-/* TOUCH START */
+/* SWIPE START */
 
 slider.addEventListener("touchstart",(e)=>{
 startX = e.touches[0].clientX;
 });
 
-/* TOUCH END */
+/* SWIPE END */
 
 slider.addEventListener("touchend",(e)=>{
 
@@ -599,17 +606,20 @@ let endX = e.changedTouches[0].clientX;
 
 if(startX - endX > 50){
 index++;
-if(index>=total) index=0;
 }
 
 if(endX - startX > 50){
 index--;
-if(index<0) index=total-1;
 }
+
+if(index >= total) index = 0;
+if(index < 0) index = total - 1;
 
 showSlide();
 
 });
+
+/* FIRST LOAD */
 
 showSlide();
 
