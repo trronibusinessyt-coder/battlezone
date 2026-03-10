@@ -790,3 +790,11 @@ background:#00e5ff55;
 .toggle.active::after{
 left:20px;
 }
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+z-index:9999;
+}
