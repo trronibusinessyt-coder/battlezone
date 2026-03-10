@@ -12,6 +12,7 @@ margin:0;
 font-family:Arial;
 background: radial-gradient(circle at top,#0a0f1c,#03040a);
 color:white;
+padding-top:70px;
 padding-bottom:90px;
 overflow-x:hidden;
 width:100%;
@@ -26,9 +27,11 @@ align-items:center;
 padding:10px 12px;
 background:linear-gradient(90deg,#240046,#3c096c);
 height:60px;
-position:sticky;
+position:fixed;
 top:0;
-z-index:1000;
+left:0;
+width:100%;
+z-index:9999;
 }
 
 .profile{
@@ -242,7 +245,7 @@ position:fixed;
 bottom:0;
 left:0;
 width:100%;
-z-index:1000;
+z-index:9999;
 background:linear-gradient(180deg,#240046,#3c096c);
 display:flex;
 justify-content:space-around;
