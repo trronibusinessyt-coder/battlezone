@@ -588,3 +588,56 @@ showSlide(index);
 }
 
 setInterval(nextSlide,4000);
+
+/* SWIPE BANNER SLIDER */
+
+let slider = document.querySelector(".slides");
+
+if(slider){
+
+let index = 0;
+let startX = 0;
+
+let total = document.querySelectorAll(".slide").length;
+
+function showSlide(){
+slider.style.transform = "translateX(-" + index * 100 + "%)";
+}
+
+/* AUTO SLIDE */
+
+setInterval(()=>{
+index++;
+if(index>=total){
+index=0;
+}
+showSlide();
+},4000);
+
+/* TOUCH START */
+
+slider.addEventListener("touchstart",(e)=>{
+startX = e.touches[0].clientX;
+});
+
+/* TOUCH END */
+
+slider.addEventListener("touchend",(e)=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+index++;
+if(index>=total) index=0;
+}
+
+if(endX - startX > 50){
+index--;
+if(index<0) index=total-1;
+}
+
+showSlide();
+
+});
+
+}
