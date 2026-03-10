@@ -554,6 +554,7 @@ setTimeout(animateBalance,500);
 /* SWIPE BANNER SLIDER */
 
 let slider = document.querySelector(".slides");
+let dots = document.querySelectorAll(".dot");
 
 if(slider){
 
@@ -563,7 +564,15 @@ let startX = 0;
 let total = document.querySelectorAll(".slide").length;
 
 function showSlide(){
+
 slider.style.transform = "translateX(-" + index * 100 + "%)";
+
+dots.forEach(d=>d.classList.remove("active"));
+
+if(dots[index]){
+dots[index].classList.add("active");
+}
+
 }
 
 /* AUTO SLIDE */
@@ -601,5 +610,7 @@ if(index<0) index=total-1;
 showSlide();
 
 });
+
+showSlide();
 
 }
