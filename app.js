@@ -624,3 +624,76 @@ showSlide();
 showSlide();
 
 }
+
+/* PRO SLIDER */
+
+const track = document.querySelector(".banner-track");
+const slides = document.querySelectorAll(".banner-slide");
+const dots = document.querySelectorAll(".banner-dots .dot");
+
+if(track){
+
+let index = 0;
+let startX = 0;
+let total = slides.length;
+
+/* UPDATE SLIDER */
+
+function updateSlider(){
+
+track.style.transform = "translateX(-"+index*100+"%)";
+
+/* 3D ACTIVE */
+
+slides.forEach(s=>s.classList.remove("active"));
+slides[index].classList.add("active");
+
+/* DOT UPDATE */
+
+dots.forEach(d=>d.classList.remove("active"));
+dots[index].classList.add("active");
+
+}
+
+/* AUTOPLAY */
+
+setInterval(()=>{
+index++;
+if(index>=total){
+index=0;
+}
+updateSlider();
+},4000);
+
+/* TOUCH START */
+
+track.addEventListener("touchstart",(e)=>{
+startX = e.touches[0].clientX;
+});
+
+/* TOUCH END */
+
+track.addEventListener("touchend",(e)=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+index++;
+}
+
+if(endX - startX > 50){
+index--;
+}
+
+if(index>=total) index=0;
+if(index<0) index=total-1;
+
+updateSlider();
+
+});
+
+/* FIRST LOAD */
+
+updateSlider();
+
+}
