@@ -26,9 +26,9 @@ align-items:center;
 padding:10px 12px;
 background:linear-gradient(90deg,#240046,#3c096c);
 height:60px;
-overflow:hidden;
-width:100%;
-box-sizing:border-box;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .profile{
@@ -265,7 +265,9 @@ background:#25d366 !important;
 .bottom-nav{
 position:fixed;
 bottom:0;
+left:0;
 width:100%;
+z-index:1000;
 background:linear-gradient(180deg,#240046,#3c096c);
 display:flex;
 justify-content:space-around;
@@ -739,17 +741,28 @@ margin:15px;
 .menu-item{
 display:flex;
 align-items:center;
-justify-content:space-between;
-background:#1a0033;
-padding:14px;
-border-radius:10px;
-margin-bottom:10px;
-font-size:15px;
+background:#2a0047;
+padding:16px;
+border-radius:14px;
+margin-bottom:12px;
+font-size:17px;
+gap:14px;
 }
 
 .menu-item i{
-width:25px;
+font-size:20px;
+width:26px;
 text-align:center;
+}
+
+.menu-item span{
+flex:1;
+font-size:17px;
+}
+
+.menu-item .fa-angle-right{
+margin-left:auto;
+opacity:0.7;
 }
 
 /* TOGGLE */
