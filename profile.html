@@ -1,87 +1,150 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Profile</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
-<body onload="loadWallet()">
+<body>
 
-<div class="profile-header">
+<!-- TOP BAR -->
 
-<div class="profile-info">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="avatar">
+<div class="topbar">
+
+<div class="profile">
+
+<img src="https://i.imgur.com/6VBx3io.png">
 
 <div>
-<h2 id="username">Player</h2>
-<p class="verified">✔ KYC Verified</p>
-</div>
-</div>
-
-<div class="wallet-mini">
-🪙 <span id="balance">0</span>
-<a href="wallet.html">+</a>
+<h3 class="profile-name">BattleZone</h3>
+<p class="profile-sub">FREE FIRE ESPORTS</p>
 </div>
 
 </div>
 
+<div class="top-actions">
 
-<!-- Stats -->
+<a href="support.html" class="support-icon">
+<i class="fa-solid fa-headset"></i>
+</a>
 
-<div class="stats">
+<div class="wallet-badge">
+<i class="fa-solid fa-wallet"></i>
+<span id="topBalance">0</span>
+</div>
 
-<div class="stat-card">
-<h3 id="matches">0</h3>
+</div>
+
+</div>
+
+<!-- PROFILE CENTER -->
+
+<div class="profile-center">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+class="profile-avatar">
+
+<h2 id="usernameDisplay">Player</h2>
+
+<p class="kyc">Kyc Verified</p>
+
+</div>
+
+<!-- STATS -->
+
+<div class="stats-box">
+
+<div>
+<h3>23</h3>
 <p>Matches Played</p>
 </div>
 
-<div class="stat-card">
-<h3 id="kills">0</h3>
-<p>Total Kills</p>
+<div class="divider"></div>
+
+<div>
+<h3>11</h3>
+<p>Total Killed</p>
 </div>
 
-<div class="stat-card">
-<h3 id="won">0</h3>
+<div class="divider"></div>
+
+<div>
+<h3>41.00</h3>
 <p>Amount Won</p>
 </div>
 
 </div>
 
+<!-- MENU LIST -->
 
-<!-- Menu -->
+<div class="profile-menu">
 
-<div class="menu">
+<div class="menu-item">
+<i class="fa-solid fa-bell"></i>
+<span>Push Notification</span>
+<div class="toggle"></div>
+</div>
 
-<a href="profile-details.html" class="menu-item">👤 My Profile</a>
+<div class="menu-item">
+<i class="fa-solid fa-user"></i>
+<span>My Profile</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="wallet.html" class="menu-item">💰 My Wallet</a>
+<div class="menu-item">
+<i class="fa-solid fa-wallet"></i>
+<span>My Wallet</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="my-matches.html" class="menu-item">🎮 My Matches</a>
+<div class="menu-item">
+<i class="fa-solid fa-gamepad"></i>
+<span>My Matches</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="leaderboard.html" class="menu-item">🏆 My Statistics</a>
+<div class="menu-item">
+<i class="fa-solid fa-cart-shopping"></i>
+<span>My Order</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="rewards.html" class="menu-item">🎁 My Rewards</a>
+<div class="menu-item">
+<i class="fa-solid fa-chart-column"></i>
+<span>My Statistics</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="support.html" class="menu-item">🎧 Customer Support</a>
+<div class="menu-item">
+<i class="fa-solid fa-gift"></i>
+<span>My Rewards</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
-<a href="#" onclick="logout()" class="menu-item logout">🚪 Logout</a>
+<div class="menu-item">
+<i class="fa-solid fa-users"></i>
+<span>My Referrals</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
+
+<div class="menu-item">
+<i class="fa-solid fa-right-from-bracket"></i>
+<span onclick="logout()">Logout</span>
+<i class="fa-solid fa-angle-right"></i>
+</div>
 
 </div>
 
-
-
-<!-- Bottom Nav -->
-
-<div class="bottom-nav">
-<a href="index.html">🏠</a>
-<a href="wallet.html">💰</a>
-<a href="rank.html">🏆</a>
-<a href="profile.html">👤</a>
-</div>
-
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
