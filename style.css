@@ -78,23 +78,6 @@ border-radius:14px;
 
 /* QUICK MENU */
 
-.quick-btn{
-width:70px;
-height:70px;
-background:linear-gradient(180deg,#7b2ff7,#2c0b5e);
-border-radius:15px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-color:white;
-text-decoration:none;
-box-shadow:0 0 12px #7b2ff7;
-font-size:12px;
-animation: floatIcon 3s ease-in-out infinite;
-transition:0.3s;
-}
-
 .quick-btn img{
 width:28px;
 height:28px;
@@ -116,14 +99,6 @@ margin-bottom:5px;
 .quick-btn:hover{
 transform:translateY(-3px);
 box-shadow:0 0 18px #9d4dff;
-}
-
-.quick-actions{
-display:flex;
-justify-content:space-around;
-margin:15px 10px;
-width:100%;
-box-sizing:border-box;
 }
 
 /* SECTION TITLE */
@@ -497,9 +472,19 @@ padding:0 10px;
 }
 
 .quick-btn{
-width:65px;
-height:65px;
-font-size:11px;
+width:68px;
+height:68px;
+background:linear-gradient(180deg,#7b2ff7,#2c0b5e);
+border-radius:15px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+text-decoration:none;
+box-shadow:0 0 12px #7b2ff7;
+font-size:12px;
+transition:0.3s;
 }
 
 /* EXCLUSIVE TEXT FIX */
@@ -686,8 +671,8 @@ margin-top:25px;
 }
 
 .profile-avatar{
-width:100px;
-height:100px;
+width:110px;
+height:110px;
 border-radius:50%;
 object-fit:cover;
 border:3px solid #00e5ff;
@@ -768,8 +753,8 @@ opacity:0.7;
 /* TOGGLE */
 
 .toggle{
-width:38px;
-height:20px;
+width:40px;
+height:22px;
 background:#555;
 border-radius:20px;
 position:relative;
@@ -781,7 +766,16 @@ width:18px;
 height:18px;
 background:#00e5ff;
 position:absolute;
-top:1px;
-left:1px;
+top:2px;
+left:2px;
 border-radius:50%;
+transition:0.3s;
+}
+
+.toggle.active{
+background:#00e5ff55;
+}
+
+.toggle.active::after{
+left:20px;
 }
