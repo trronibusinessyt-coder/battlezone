@@ -136,7 +136,6 @@ window.location.href="login.html";
 }
 
 
-
 /* ================= WALLET SYSTEM ================= */
 
 function loadWallet(){
@@ -188,8 +187,6 @@ alert("Money Added Successfully!");
 loadWallet();
 
 }
-
-
 
 /* ================= TOURNAMENT LOAD ================= */
 
@@ -251,8 +248,6 @@ container.innerHTML+=`
 
 }
 
-
-
 /* ================= OPEN MATCH ================= */
 
 function openMatch(id){
@@ -262,8 +257,6 @@ localStorage.setItem("matchId",id);
 window.location.href="match.html";
 
 }
-
-
 
 /* ================= SLOT SYSTEM ================= */
 
@@ -302,7 +295,6 @@ ${i}
 }
 
 }
-
 
 
 function selectSlot(num){
@@ -419,7 +411,6 @@ list.innerHTML+=`
 });
 
 }
-
 
 
 /* ================= GAME CATEGORY ================= */
@@ -559,88 +550,6 @@ el.innerText = count.toFixed(0);
 
 setTimeout(animateBalance,500);
 
-/* BANNER SLIDER */
-
-let slides=document.querySelectorAll(".slide");
-let dots=document.querySelectorAll(".dot");
-let index=0;
-
-function showSlide(i){
-
-slides.forEach(s=>s.classList.remove("active"));
-dots.forEach(d=>d.classList.remove("active"));
-
-slides[i].classList.add("active");
-dots[i].classList.add("active");
-
-}
-
-function nextSlide(){
-
-index++;
-
-if(index>=slides.length){
-index=0;
-}
-
-showSlide(index);
-
-}
-
-setInterval(nextSlide,4000);
-
-/* SWIPE BANNER SLIDER */
-
-let slider = document.querySelector(".slides");
-
-if(slider){
-
-let index = 0;
-let startX = 0;
-
-let total = document.querySelectorAll(".slide").length;
-
-function showSlide(){
-slider.style.transform = "translateX(-" + index * 100 + "%)";
-}
-
-/* AUTO SLIDE */
-
-setInterval(()=>{
-index++;
-if(index>=total){
-index=0;
-}
-showSlide();
-},4000);
-
-/* TOUCH START */
-
-slider.addEventListener("touchstart",(e)=>{
-startX = e.touches[0].clientX;
-});
-
-/* TOUCH END */
-
-slider.addEventListener("touchend",(e)=>{
-
-let endX = e.changedTouches[0].clientX;
-
-if(startX - endX > 50){
-index++;
-if(index>=total) index=0;
-}
-
-if(endX - startX > 50){
-index--;
-if(index<0) index=total-1;
-}
-
-showSlide();
-
-});
-
-}
 
 /* SWIPE BANNER SLIDER */
 
