@@ -558,3 +558,33 @@ el.innerText = count.toFixed(0);
 }
 
 setTimeout(animateBalance,500);
+
+/* BANNER SLIDER */
+
+let slides=document.querySelectorAll(".slide");
+let dots=document.querySelectorAll(".dot");
+let index=0;
+
+function showSlide(i){
+
+slides.forEach(s=>s.classList.remove("active"));
+dots.forEach(d=>d.classList.remove("active"));
+
+slides[i].classList.add("active");
+dots[i].classList.add("active");
+
+}
+
+function nextSlide(){
+
+index++;
+
+if(index>=slides.length){
+index=0;
+}
+
+showSlide(index);
+
+}
+
+setInterval(nextSlide,4000);
