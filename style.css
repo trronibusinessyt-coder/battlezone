@@ -673,6 +673,14 @@ text-align:center;
 margin-top:25px;
 }
 
+.profile-header{
+position:sticky;
+top:60px;
+z-index:900;
+background: radial-gradient(circle at top,#0a0f1c,#03040a);
+padding-bottom:10px;
+}
+
 .profile-avatar{
 width:110px;
 height:110px;
