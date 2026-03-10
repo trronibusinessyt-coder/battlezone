@@ -641,3 +641,21 @@ updateSlider();
 startAuto();
 
 }
+
+let user=JSON.parse(localStorage.getItem("battlezoneUser"));
+
+if(user){
+
+let name=document.getElementById("usernameDisplay");
+
+if(name){
+name.innerText=user.name;
+}
+
+let topBal=document.getElementById("topBalance");
+
+if(topBal){
+topBal.innerText=user.wallet;
+}
+
+}
