@@ -674,9 +674,11 @@ margin-top:25px;
 }
 
 .profile-header{
-position:sticky;
+position:fixed;
 top:60px;
-z-index:1000;
+left:0;
+width:100%;
+z-index:900;
 background: radial-gradient(circle at top,#0a0f1c,#03040a);
 padding-bottom:15px;
 }
@@ -731,8 +733,8 @@ background:#444;
 /* PROFILE MENU */
 
 .profile-menu{
-margin:20px 15px;
-margin-top:20px;
+margin:15px;
+margin-top:260px;
 }
 
 .menu-item{
