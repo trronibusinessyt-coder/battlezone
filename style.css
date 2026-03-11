@@ -262,16 +262,23 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 text-decoration:none;
-color:white;
+color:#ffffff;
 font-size:12px;
-opacity:0.8;
 background:transparent;
 border:none;
+cursor:pointer;
+transition:0.2s;
 }
 
 .nav-btn span{
 font-size:20px;
-margin-bottom:3px;
+margin-bottom:4px;
+display:block;
+}
+
+.nav-btn i{
+color:white;
+font-size:18px;
 }
 
 .nav-btn.active{
