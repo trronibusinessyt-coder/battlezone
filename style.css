@@ -827,6 +827,6 @@ left:20px;
 
 /* REMOVE MOBILE TAP BLUE HIGHLIGHT */
 
-a, button, .nav-btn {
+*{
 -webkit-tap-highlight-color: transparent;
 }
