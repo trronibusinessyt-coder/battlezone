@@ -825,8 +825,15 @@ background:#00e5ff55;
 left:20px;
 }
 
-/* REMOVE MOBILE TAP BLUE HIGHLIGHT */
+/* REMOVE MOBILE CLICK HIGHLIGHT */
 
 *{
+-webkit-tap-highlight-color: transparent;
+}
+
+/* REMOVE BUTTON SELECT EFFECT */
+
+button, a{
+outline:none;
 -webkit-tap-highlight-color: transparent;
 }
