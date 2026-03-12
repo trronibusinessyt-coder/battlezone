@@ -238,21 +238,21 @@ font-weight:bold;
 background:#25d366 !important;
 }
 
-/* BOTTOM NAV */
+/* ===== PRO BOTTOM NAV ===== */
 
 .bottom-nav{
 position:fixed;
 bottom:0;
 left:0;
 width:100%;
-height:65px;
-background:linear-gradient(180deg,#240046,#3c096c);
+height:70px;
+background:linear-gradient(180deg,#1a0033,#240046);
 display:flex;
 justify-content:space-around;
 align-items:center;
-border-top-left-radius:20px;
-border-top-right-radius:20px;
-box-shadow:0 -5px 20px rgba(0,0,0,0.6);
+border-top-left-radius:22px;
+border-top-right-radius:22px;
+box-shadow:0 -8px 25px rgba(0,0,0,0.6);
 z-index:99999;
 }
 
@@ -278,28 +278,28 @@ transition:0.3s;
 
 /* TEXT HIDDEN */
 
-.nav-btn p{
-display:none;
+.nav-btn span{
 font-size:11px;
 margin-top:3px;
 color:#00e5ff;
+display:none;
 }
 
 /* ACTIVE TAB */
 
 .nav-btn.active i{
-font-size:24px;
+font-size:26px;
 color:#00e5ff;
-text-shadow:0 0 10px #00e5ff;
+text-shadow:0 0 12px #00e5ff;
 }
 
 /* SHOW TEXT */
 
-.nav-btn.active p{
+.nav-btn.active span{
 display:block;
 }
 
-/* HOVER TOUCH EFFECT */
+/* TOUCH EFFECT */
 
 .nav-btn:active{
 transform:scale(0.9);
