@@ -286,6 +286,10 @@ color:#00e5ff;
 font-weight:bold;
 }
 
+.nav-btn.active i{
+color:#00e5ff;
+}
+
 /* SLOT SYSTEM */
 
 .slot-grid{
