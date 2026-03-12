@@ -824,3 +824,9 @@ background:#00e5ff55;
 .toggle.active::after{
 left:20px;
 }
+
+/* REMOVE MOBILE TAP BLUE HIGHLIGHT */
+
+a, button, .nav-btn {
+-webkit-tap-highlight-color: transparent;
+}
