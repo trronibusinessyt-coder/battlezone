@@ -245,15 +245,18 @@ position:fixed;
 bottom:0;
 left:0;
 width:100%;
-z-index:99999;
+height:65px;
 background:linear-gradient(180deg,#240046,#3c096c);
 display:flex;
 justify-content:space-around;
-padding:10px 0;
+align-items:center;
 border-top-left-radius:20px;
 border-top-right-radius:20px;
 box-shadow:0 -5px 20px rgba(0,0,0,0.6);
+z-index:99999;
 }
+
+/* NAV BUTTON */
 
 .nav-btn{
 flex:1;
@@ -262,32 +265,44 @@ flex-direction:column;
 align-items:center;
 justify-content:center;
 text-decoration:none;
-color:#ffffff;
-font-size:12px;
-background:transparent;
-border:none;
-cursor:pointer;
-transition:0.2s;
+transition:0.3s;
 }
 
-.nav-btn span{
+/* ICON NORMAL */
+
+.nav-btn i{
 font-size:20px;
-margin-bottom:4px;
+color:#9aa0a6;
+transition:0.3s;
+}
+
+/* TEXT HIDDEN */
+
+.nav-btn p{
+display:none;
+font-size:11px;
+margin-top:3px;
+color:#00e5ff;
+}
+
+/* ACTIVE TAB */
+
+.nav-btn.active i{
+font-size:24px;
+color:#00e5ff;
+text-shadow:0 0 10px #00e5ff;
+}
+
+/* SHOW TEXT */
+
+.nav-btn.active p{
 display:block;
 }
 
-.nav-btn i{
-color:white;
-font-size:18px;
-}
+/* HOVER TOUCH EFFECT */
 
-.nav-btn.active{
-color:#00e5ff;
-font-weight:bold;
-}
-
-.nav-btn.active i{
-color:#00e5ff;
+.nav-btn:active{
+transform:scale(0.9);
 }
 
 /* SLOT SYSTEM */
