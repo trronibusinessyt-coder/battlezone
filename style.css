@@ -837,3 +837,34 @@ button, a{
 outline:none;
 -webkit-tap-highlight-color: transparent;
 }
+
+/* BUTTON PRESS ANIMATION */
+
+.nav-btn{
+transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.nav-btn:active{
+transform: scale(0.85);
+filter: brightness(1.3);
+}
+
+/* QUICK BUTTONS */
+
+.quick-btn{
+transition: transform 0.15s ease;
+}
+
+.quick-btn:active{
+transform: scale(0.88);
+}
+
+/* MENU ITEMS */
+
+.menu-item{
+transition: transform 0.15s ease;
+}
+
+.menu-item:active{
+transform: scale(0.97);
+}
