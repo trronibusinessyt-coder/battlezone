@@ -659,3 +659,36 @@ topBal.innerText=user.wallet;
 }
 
 }
+
+// LOADER AUTO HIDE
+
+window.addEventListener("load", ()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1500);
+});
+
+
+// PAGE TRANSITION LOADER
+
+document.querySelectorAll("a").forEach(link => {
+
+link.addEventListener("click", function(e){
+
+let href = this.getAttribute("href");
+
+if(href && href !== "#"){
+
+e.preventDefault();
+
+document.getElementById("loader").style.display="flex";
+
+setTimeout(()=>{
+window.location = href;
+},800);
+
+}
+
+});
+
+});
