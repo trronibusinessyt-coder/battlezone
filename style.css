@@ -1243,29 +1243,11 @@ transform:scale(1.1);
 box-shadow:0 0 18px #ff3d00;
 }
 
-.hot-flash{
-margin-top:70px;
-background:linear-gradient(90deg,#ff3d00,#ff7b00);
-color:white;
-font-weight:bold;
-font-size:13px;
-overflow:hidden;
-white-space:nowrap;
-}
-
-.flash-text{
-display:inline-block;
-padding:10px;
-animation:scrollText 10s linear infinite;
-}
-
-@keyframes scrollText{
-0%{transform:translateX(100%);}
-100%{transform:translateX(-100%);}
-}
-
-
 /* HOT FLASH PRO LOCKED */
+
+body{
+padding-top:60px;
+}
 
 .hot-flash{
 margin-top:60px;
