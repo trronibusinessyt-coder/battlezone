@@ -154,9 +154,27 @@ let history=document.getElementById("history");
 
 history.innerHTML="";
 
-user.transactions.forEach(function(t){
+user.transactions.forEach(t=>{
 
-history.innerHTML+="<p>"+t+"</p>";
+let color = t.type==="credit" ? "green" : "red";
+let sign = t.type==="credit" ? "+" : "-";
+
+history.innerHTML+=`
+<div class="tx-item">
+    <div class="tx-left">
+        <div class="tx-icon ${color}">
+            ${t.type==="credit" ? "⬇" : "⬆"}
+        </div>
+        <div>
+            <p>${t.text}</p>
+        </div>
+    </div>
+
+    <div class="tx-amount ${color}">
+        ${sign}🪙${t.amount}
+    </div>
+</div>
+`;
 
 });
 
@@ -178,7 +196,11 @@ let user=JSON.parse(localStorage.getItem("battlezoneUser"));
 
 user.wallet+=amount;
 
-user.transactions.push("Added ₹"+amount);
+user.transactions.push({
+type:"credit",
+text:"Added Coins",
+amount:amount
+});
 
 localStorage.setItem("battlezoneUser",JSON.stringify(user));
 
@@ -357,7 +379,11 @@ return;
 
 user.wallet-=entry;
 
-user.transactions.push("Joined Tournament ₹"+entry);
+user.transactions.push({
+type:"debit",
+text:"Joined Match",
+amount:entry
+});
 
 localStorage.setItem("battlezoneUser",JSON.stringify(user));
 
