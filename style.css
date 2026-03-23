@@ -1263,3 +1263,41 @@ animation:scrollText 10s linear infinite;
 0%{transform:translateX(100%);}
 100%{transform:translateX(-100%);}
 }
+
+
+/* HOT FLASH PRO LOCKED */
+
+.hot-flash{
+margin-top:75px;
+display:flex;
+align-items:center;
+background:linear-gradient(90deg,#1a0000,#3b0000,#1a0000);
+border-radius:12px;
+margin-left:10px;
+margin-right:10px;
+padding:8px;
+box-shadow:0 0 15px rgba(255,80,0,0.5);
+}
+
+/* LEFT TAG */
+
+.flash-left{
+background:linear-gradient(90deg,#ff3d00,#ff7b00);
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+color:white;
+box-shadow:0 0 10px #ff3d00;
+}
+
+/* RIGHT TEXT */
+
+.flash-right{
+margin-left:10px;
+font-size:12px;
+color:#ffcc99;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
