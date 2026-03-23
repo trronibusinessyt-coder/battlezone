@@ -258,9 +258,9 @@ container.innerHTML+=`
 
 <h3>${t.mode.toUpperCase()}</h3>
 
-<p>Entry Fee : ₹${t.entry}</p>
+<p>Entry Fee : 🪙${t.entry}</p>
 
-<p>Prize : ₹${t.prize}</p>
+<p>Prize : 🪙${t.prize}</p>
 
 <p>Time : ${t.time}</p>
 
