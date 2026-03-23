@@ -1295,16 +1295,3 @@ white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
 }
-
-.hot-flash{
-animation:flashGlow 2s infinite alternate;
-}
-
-@keyframes flashGlow{
-0%{
-box-shadow:0 0 10px rgba(255,80,0,0.3);
-}
-100%{
-box-shadow:0 0 25px rgba(255,80,0,0.7);
-}
-}
