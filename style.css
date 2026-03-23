@@ -1268,7 +1268,7 @@ animation:scrollText 10s linear infinite;
 /* HOT FLASH PRO LOCKED */
 
 .hot-flash{
-margin-top:75px;
+margin-top:60px;
 display:flex;
 align-items:center;
 background:linear-gradient(90deg,#1a0000,#3b0000,#1a0000);
