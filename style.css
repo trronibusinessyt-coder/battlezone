@@ -16,6 +16,8 @@ padding-top:70px;
 padding-bottom:90px;
 overflow-x:hidden;
 width:100%;
+position:relative;
+z-index:1;
 }
 
 /* TOP BAR */
@@ -630,6 +632,8 @@ box-shadow:0 0 15px rgba(0,198,255,0.4);
 display:flex;
 transition:transform 0.5s ease;
 will-change:transform;
+position:relative;
+z-index:1;
 }
 
 .banner-slide{
