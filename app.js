@@ -664,7 +664,10 @@ topBal.innerText=user.wallet;
 
 window.addEventListener("load", ()=>{
 setTimeout(()=>{
-document.getElementById("loader").style.display="none";
+let loader = document.getElementById("loader");
+if(loader){
+loader.style.display="none";
+}
 },1500);
 });
 
