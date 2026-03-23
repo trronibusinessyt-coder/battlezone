@@ -156,6 +156,12 @@ history.innerHTML="";
 
 user.transactions.forEach(t=>{
 
+// OLD DATA SUPPORT
+if(typeof t === "string"){
+history.innerHTML+=`<p>${t}</p>`;
+return;
+}
+
 let color = t.type==="credit" ? "green" : "red";
 let sign = t.type==="credit" ? "+" : "-";
 
