@@ -691,3 +691,90 @@ topBal.innerText=user.wallet;
 }
 
 }
+
+/* ================= LEADERBOARD SYSTEM ================= */
+
+let currentType = "weekly";
+let currentMap = "all";
+
+function setType(type){
+  currentType = type;
+  loadRank();
+}
+
+function setMap(map){
+  currentMap = map;
+  loadRank();
+}
+
+async function loadRank(){
+
+let container = document.getElementById("rankList");
+if(!container) return;
+
+container.innerHTML="";
+
+const querySnapshot = await getDocs(collection(db,"leaderboard"));
+
+let players = [];
+
+querySnapshot.forEach(doc=>{
+  let data = doc.data();
+
+  if(currentMap !== "all" && data.map !== currentMap) return;
+
+  players.push({
+    name:data.name,
+    coins:data[currentType],
+    photo:data.photo
+  });
+});
+
+/* SORT */
+players.sort((a,b)=>b.coins - a.coins);
+
+/* TOP 3 */
+if(players.length >= 3){
+
+document.getElementById("rank1").innerHTML = `
+<img src="${players[0].photo}">
+<p>${players[0].name}</p>
+<h4>🪙 ${players[0].coins}</h4>
+`;
+
+document.getElementById("rank2").innerHTML = `
+<img src="${players[1].photo}">
+<p>${players[1].name}</p>
+<h4>🪙 ${players[1].coins}</h4>
+`;
+
+document.getElementById("rank3").innerHTML = `
+<img src="${players[2].photo}">
+<p>${players[2].name}</p>
+<h4>🪙 ${players[2].coins}</h4>
+`;
+
+}
+
+/* LIST */
+players.slice(3).forEach((p,i)=>{
+
+container.innerHTML+=`
+<div class="rank-card">
+  <div class="rank-left">
+    <span>${i+4}</span>
+    <img src="${p.photo}" width="35">
+    <p>${p.name}</p>
+  </div>
+  <b>🪙 ${p.coins}</b>
+</div>
+`;
+
+});
+
+}
+
+/* AUTO LOAD (IMPORTANT 🔥) */
+if(window.location.pathname.includes("rank.html")){
+  loadRank();
+}
