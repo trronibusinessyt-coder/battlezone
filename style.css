@@ -1243,63 +1243,80 @@ transform:scale(1.1);
 box-shadow:0 0 18px #ff3d00;
 }
 
-/* 🔥 HOT FLASH FINAL PREMIUM */
+/* 🔥 HOT FLASH PRO MAX */
 
 .hot-flash{
 display:flex;
 align-items:center;
-gap:14px;
+gap:12px;
 
 margin:6px 10px;
 padding:10px 12px;
 
 border-radius:30px;
 
-/* 🔥 smooth fire gradient */
-background:linear-gradient(90deg,#2a0000,#4a0f00,#2a0000);
+/* 🔥 premium dark fire */
+background:linear-gradient(90deg,#1a0000,#3b0000,#1a0000);
 
-/* 🔥 soft glow */
-box-shadow:0 0 12px rgba(255,80,0,0.35);
+/* 🔥 glow */
+box-shadow:
+0 0 20px rgba(255,60,0,0.5),
+inset 0 0 10px rgba(255,120,0,0.2);
 
-border:none;
+overflow:hidden;
 }
 
-/* 🔥 LEFT TAG */
+/* 🔥 LEFT TAG (INLINE FIX) */
 
 .flash-tag{
 display:flex;
 align-items:center;
-gap:5px;
+gap:6px;
 
 background:linear-gradient(90deg,#ff3d00,#ff7b00);
-padding:6px 12px;
+padding:6px 14px;
 
 border-radius:20px;
-font-size:11px;
-font-weight:600;
+font-size:12px;
+font-weight:bold;
 color:white;
 
-box-shadow:0 0 8px rgba(255,80,0,0.6);
+white-space:nowrap; /* 🔥 IMPORTANT */
+
+/* glow */
+box-shadow:
+0 0 10px #ff3d00,
+0 0 20px rgba(255,80,0,0.6);
 }
 
-/* 🔥 RIGHT LINE */
+/* 🔥 SCROLL AREA */
 
-.flash-line{
-display:flex;
-align-items:center;
-gap:8px;
-
-font-size:12px;
-color:#ffd6b3;
-
+.flash-scroll{
+flex:1;
 overflow:hidden;
-white-space:nowrap;
-
-letter-spacing:0.3px;
+position:relative;
 }
 
-/* 🔥 FIXED DIVIDER (NO CONFLICT) */
+/* 🔥 MOVING TEXT */
+
+.flash-track{
+display:inline-block;
+white-space:nowrap;
+animation:scrollText 12s linear infinite;
+font-size:12px;
+color:#ffcc99;
+}
+
+/* 🔥 ANIMATION */
+
+@keyframes scrollText{
+0%{transform:translateX(100%);}
+100%{transform:translateX(-100%);}
+}
+
+/* 🔥 DIVIDER */
 
 .flash-divider{
-opacity:0.3;
+margin:0 10px;
+opacity:0.5;
 }
