@@ -1246,36 +1246,65 @@ box-shadow:0 0 18px #ff3d00;
 /* HOT FLASH PRO LOCKED */
 
 .hot-flash{
-margin-top:10px;
 display:flex;
 align-items:center;
-background:linear-gradient(90deg,#1a0000,#3b0000,#1a0000);
-border-radius:12px;
-margin-left:10px;
-margin-right:10px;
-padding:8px;
-box-shadow:0 0 15px rgba(255,80,0,0.5);
+gap:10px;
+
+margin:8px 10px;
+padding:10px;
+
+border-radius:18px;
+
+/* 🔥 premium glass + fire */
+background:linear-gradient(90deg, rgba(255,60,0,0.15), rgba(255,120,0,0.08));
+backdrop-filter:blur(10px);
+
+/* 🔥 glow border */
+border:1px solid rgba(255,100,0,0.3);
+
+/* 🔥 shadow */
+box-shadow:
+0 0 15px rgba(255,80,0,0.4),
+inset 0 0 10px rgba(255,255,255,0.05);
 }
 
 /* LEFT TAG */
 
 .flash-left{
 background:linear-gradient(90deg,#ff3d00,#ff7b00);
-padding:6px 12px;
-border-radius:20px;
+padding:8px 14px;
+border-radius:30px;
 font-size:12px;
 font-weight:bold;
 color:white;
-box-shadow:0 0 10px #ff3d00;
-}
 
+/* 🔥 glow */
+box-shadow:
+0 0 10px #ff3d00,
+0 0 20px rgba(255,80,0,0.6);
+}
 /* RIGHT TEXT */
 
 .flash-right{
-margin-left:10px;
 font-size:12px;
-color:#ffcc99;
+color:#ffd6b3;
+flex:1;
+
+/* 🔥 clean text */
 white-space:nowrap;
 overflow:hidden;
 text-overflow:ellipsis;
+}
+
+.hot-flash{
+animation:flashGlow 2s infinite alternate;
+}
+
+@keyframes flashGlow{
+0%{
+box-shadow:0 0 10px rgba(255,80,0,0.3);
+}
+100%{
+box-shadow:0 0 25px rgba(255,80,0,0.7);
+}
 }
