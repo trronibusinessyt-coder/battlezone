@@ -790,3 +790,16 @@ container.innerHTML+=`
 if(window.location.pathname.includes("rank.html")){
   loadRank();
 }
+
+/* 🔥 LOADER HIDE */
+
+window.addEventListener("load", ()=>{
+
+setTimeout(()=>{
+let loader = document.getElementById("loader");
+if(loader){
+loader.style.display="none";
+}
+},1500);
+
+});
