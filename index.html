@@ -1,164 +1,281 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BattleZone Esports</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-</head>
-
-<body onload="loadTournaments()">
-
-<!-- 🔥 LOADING SCREEN -->
-<div id="loader">
-
-  <img src="images/logo.png" class="loader-logo">
-
-  <h2 class="loader-text">BattleZone</h2>
-  <p class="loader-sub">Loading Arena...</p>
-
-</div>
-
-
-<!-- 🔥 NEW PRO TOP BAR -->
-<div class="topbar-pro">
-
-  <div class="logo-box">
-    <img src="images/logo.png" class="logo-img">
-    <div>
-      <h2>BattleZone</h2>
-      <p>Free Fire Tournaments</p>
-    </div>
-  </div>
-
-  <div class="top-right">
-
-    <div class="online-box">
-      🟢 1420
-    </div>
-
-    <div class="coin-box">
-      🪙 <span id="topBalance">0</span>
-    </div>
-
-    <i class="fa-solid fa-bell"></i>
-
-  </div>
-
-</div>
-
-
-<!-- 🔥 HOT FLASH BAR -->
-<div class="hot-flash">
-🔥 1,420 Players Online • 245 Live Tournaments • 1 Lakh+ Prize Pools
-</div>
-
-
-<!-- 🔥 MAIN BANNER -->
-<div class="main-banner-pro">
-  <h1>MEGA CUP</h1>
-  <p>🔥 1.5 LAKH PRIZE</p>
-  <button>PLAY NOW</button>
-</div>
-
-
-<!-- 🔥 QUICK ACTION -->
-<div class="quick-actions">
-
-<a href="support.html" class="quick-btn">
-<i class="fa fa-headphones"></i>
-<span>Support</span>
-</a>
-
-<a href="#" class="quick-btn">
-<i class="fa-brands fa-whatsapp"></i>
-<span>Whatsapp</span>
-</a>
-
-<a href="#" class="quick-btn">
-<i class="fa-brands fa-youtube"></i>
-<span>Youtube</span>
-</a>
-
-<a href="wallet.html" class="quick-btn">
-<i class="fa fa-wallet"></i>
-<span>Wallet</span>
-</a>
-
-</div>
-
-
-<!-- 🔥 LIVE TOURNAMENT -->
-<h3 class="section-title">LIVE TOURNAMENTS</h3>
-
-<div id="tournamentList"></div>
-
-
-<!-- 🔥 MY CONTEST -->
-<div class="contest-section">
-
-  <div class="contest-box upcoming">
-    <i class="fa-solid fa-clock"></i>
-    <p>Upcoming</p>
-  </div>
-
-  <div class="contest-box live">
-    <i class="fa-solid fa-play"></i>
-    <p>Ongoing</p>
-  </div>
-
-  <div class="contest-box completed">
-    <i class="fa-solid fa-check"></i>
-    <p>Completed</p>
-  </div>
-
-</div>
-
-
-<!-- 🔥 SHARE -->
-<div class="share-pro">
-  <button>Share App</button>
-  <button class="whatsapp">WhatsApp</button>
-</div>
-
-
-<!-- 🔥 BOTTOM NAV -->
-<div class="bottom-nav">
-
-<a href="offers.html" class="nav-btn">
-<i class="fa-solid fa-percent"></i>
-<span>Offers</span>
-</a>
-
-<a href="rank.html" class="nav-btn">
-<i class="fa-solid fa-ranking-star"></i>
-<span>Rank</span>
-</a>
-
-<a href="index.html" class="nav-btn active">
-<i class="fa-solid fa-house"></i>
-<span>Home</span>
-</a>
-
-<a href="wallet.html" class="nav-btn">
-<i class="fa-solid fa-wallet"></i>
-<span>Wallet</span>
-</a>
-
-<a href="profile.html" class="nav-btn">
-<i class="fa-solid fa-user"></i>
-<span>Profile</span>
-</a>
-
-</div>
-
-<script type="module" src="app.js"></script>
-
-</body>
+<!DOCTYPE html>  
+<html>  
+  
+<head>  
+  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+<title>BattleZone Esports</title>  
+  
+<link rel="stylesheet" href="style.css">  
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+  
+</head>  
+  
+<body>  
+  
+<!-- 🔥 LOADING SCREEN -->  
+<div id="loader">  
+  
+  <img src="images/logo.png" class="loader-logo">  
+  
+  <h2 class="loader-text">BattleZone</h2>  
+  <p class="loader-sub">Loading Arena...</p>  
+  
+</div>  
+  
+<!-- TOP BAR -->  
+  
+<div class="topbar">  
+  
+<div class="profile">  
+  
+<img src="images/logo.png">  
+  
+<div>  
+<h3 class="profile-name">BattleZone</h3>  
+<p class="profile-sub">FREE FIRE ESPORTS</p>  
+</div>  
+  
+</div>  
+  
+<div class="top-actions">  
+  
+<a href="#" class="notify-icon">  
+<i class="fa-solid fa-bell"></i>  
+</a>  
+  
+<a href="support.html" class="support-icon">  
+<i class="fa-solid fa-headset"></i>  
+</a>  
+  
+<div class="wallet-badge">  
+  
+<i class="fa-solid fa-wallet"></i>  
+  
+<span id="topBalance">0</span>  
+  
+</div>  
+  
+</div>  
+  
+</div>  
+  
+<!-- RULES -->  
+  
+<div class="rules">  
+📢 Read Rules Properly BattleZone Esports  
+</div>  
+  
+<div class="important-section">  
+  
+<h3 class="important-title">  
+IMPORTANT <span class="important-badge">!</span>  
+</h3>  
+  
+<p class="important-sub">Updates and Alerts</p>  
+  
+</div>  
+  
+<!-- PRO BANNER SLIDER -->  
+  
+<div class="banner-container">  
+  
+<div class="banner-slider">  
+  
+<div class="banner-track">  
+  
+<div class="banner-slide">  
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e">  
+</div>  
+  
+<div class="banner-slide">  
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">  
+</div>  
+  
+<div class="banner-slide">  
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d5">  
+</div>  
+  
+</div>  
+  
+</div>  
+  
+<div class="banner-dots">  
+<span class="dot active"></span>  
+<span class="dot"></span>  
+<span class="dot"></span>  
+</div>  
+  
+</div>  
+  
+<!-- Quick Action Icons -->  
+<div class="quick-actions">  
+  
+<a href="support.html" class="quick-btn">  
+<i class="fa fa-headphones"></i>  
+<span>Support</span>  
+</a>  
+  
+<a href="https://chat.whatsapp.com/ABCDE12345xyz" class="quick-btn">  
+<i class="fa-brands fa-whatsapp"></i>  
+<span>Whatsapp</span>  
+</a>  
+  
+<a href="https://youtube.com/" class="quick-btn">  
+<i class="fa-brands fa-youtube"></i>  
+<span>Youtube</span>  
+</a>  
+  
+<a href="wallet.html" class="quick-btn">  
+<i class="fa fa-wallet"></i>  
+<span>My Wallet</span>  
+</a>  
+  
+</div>  
+  
+  
+<!-- EXCLUSIVE -->  
+  
+<div class="exclusive-header">  
+<span class="exclusive-text">EXCLUSIVE</span>  
+<span class="live-badge">LIVE</span>  
+</div>  
+  
+<p class="exclusive-sub">Big Winnings For All</p>  
+  
+<div class="exclusive">  
+  
+<div class="game-banner" onclick="window.location.href='freefire.html'">  
+  
+<div class="fair">FairPlay : ON</div>  
+  
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">  
+  
+<button class="play">PLAY</button>  
+  
+</div>  
+  
+  
+<div class="game-banner">  
+  
+<div class="fair">FairPlay : ON</div>  
+  
+<img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d5">  
+  
+<button class="play">PLAY</button>  
+  
+</div>  
+  
+</div>  
+  
+  
+  
+<!-- TOURNAMENT -->  
+  
+  
+<div id="tournamentList"></div>  
+  
+  
+<!-- MY CONTEST -->  
+  
+<div class="contest-title">  
+  
+<span>MY CONTESTS</span>  
+  
+<span class="tick">✔</span>  
+  
+</div>  
+  
+<p class="contest-sub">Your Tournaments Journey</p>  
+  
+<div class="contest-menu">  
+  
+<div class="contest-card">  
+  
+<div class="contest-icon">  
+<i class="fa-solid fa-clock"></i>  
+</div>  
+  
+<p>Upcoming</p>  
+  
+</div>  
+  
+  
+<div class="contest-card">  
+  
+<div class="contest-icon">  
+<i class="fa-solid fa-circle-play"></i>  
+</div>  
+  
+<p>Ongoing</p>  
+  
+</div>  
+  
+  
+<div class="contest-card">  
+  
+<div class="contest-icon">  
+<i class="fa-solid fa-circle-check"></i>  
+</div>  
+  
+<p>Completed</p>  
+  
+</div>  
+  
+</div>  
+  
+  
+<!-- SHARE -->  
+  
+<div class="share">  
+  
+<button>  
+<i class="fa-solid fa-share-nodes"></i>  
+Share  
+</button>  
+  
+<button class="whatsapp">  
+<i class="fa-brands fa-whatsapp"></i>  
+Share on Whatsapp  
+</button>  
+  
+</div>  
+  
+  
+<!-- ULTRA PRO BOTTOM NAV -->  
+  
+<div class="bottom-nav">  
+  
+<a href="offers.html" class="nav-btn">  
+<i class="fa-solid fa-percent"></i>  
+<span>Offers</span>  
+</a>  
+  
+<a href="rank.html" class="nav-btn">  
+<i class="fa-solid fa-ranking-star"></i>  
+<span>Rank</span>  
+</a>  
+  
+<a href="index.html" class="nav-btn active">  
+<i class="fa-solid fa-house"></i>  
+<span>Home</span>  
+</a>  
+  
+<a href="wallet.html" class="nav-btn">  
+<i class="fa-solid fa-wallet"></i>  
+<span>Wallet</span>  
+</a>  
+  
+<a href="profile.html" class="nav-btn">  
+<i class="fa-solid fa-user"></i>  
+<span>Profile</span>  
+</a>  
+  
+</div>  
+  
+<script type="module" src="app.js"></script>  
+  
+</body>  
 </html>
