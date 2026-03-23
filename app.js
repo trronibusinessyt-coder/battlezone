@@ -671,13 +671,15 @@ document.getElementById("loader").style.display="none";
 
 // PAGE TRANSITION LOADER
 
-document.querySelectorAll("a").forEach(link => {
+document.querySelectorAll("a[href]").forEach(link => {
+
+let href = link.getAttribute("href");
+
+if(href.startsWith("#") || href.startsWith("http")){
+return; // external ya same page skip
+}
 
 link.addEventListener("click", function(e){
-
-let href = this.getAttribute("href");
-
-if(href && href !== "#"){
 
 e.preventDefault();
 
@@ -686,8 +688,6 @@ document.getElementById("loader").style.display="flex";
 setTimeout(()=>{
 window.location = href;
 },800);
-
-}
 
 });
 
