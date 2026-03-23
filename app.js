@@ -664,13 +664,21 @@ topBal.innerText=user.wallet;
 
 window.addEventListener("load", ()=>{
 setTimeout(()=>{
+
 let loader = document.getElementById("loader");
+
 if(loader){
-loader.style.display="none";
+
+loader.style.opacity = "0"; // fade out
+
+setTimeout(()=>{
+loader.style.display = "none"; // hide after fade
+},400);
+
 }
+
 },1500);
 });
-
 
 // PAGE TRANSITION LOADER
 
