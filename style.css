@@ -1010,3 +1010,74 @@ color:#ff5252;
 .tx-amount{
 font-weight:bold;
 }
+
+/* FILTER BUTTONS */
+
+.rank-filters, .map-filters{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:10px;
+}
+
+.rank-filters button,
+.map-filters button{
+padding:10px 14px;
+border:none;
+border-radius:10px;
+background:#1c2541;
+color:white;
+}
+
+.rank-filters button.active,
+.map-filters button.active{
+background:#00c6ff;
+color:black;
+}
+
+/* TOP 3 */
+
+.top3{
+display:flex;
+justify-content:space-around;
+align-items:flex-end;
+padding:20px;
+}
+
+.player{
+text-align:center;
+}
+
+.player img{
+width:70px;
+border-radius:50%;
+border:3px solid gold;
+}
+
+.first img{
+width:90px;
+}
+
+.first::after{
+content:"👑";
+display:block;
+font-size:22px;
+}
+
+/* LIST */
+
+.rank-card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#1c2541;
+margin:10px;
+padding:12px;
+border-radius:12px;
+}
+
+.rank-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
