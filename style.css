@@ -1229,23 +1229,23 @@ font-size:14px;
 box-shadow:0 0 10px rgba(255,80,0,0.5);
 }
 
-/* HOT FLASH */
-
 .hot-flash{
 margin-top:70px;
-padding:10px;
 background:linear-gradient(90deg,#ff3d00,#ff7b00);
 color:white;
 font-weight:bold;
 font-size:13px;
-text-align:center;
-box-shadow:0 0 15px rgba(255,80,0,0.7);
-animation:flashMove 8s linear infinite;
+overflow:hidden;
+white-space:nowrap;
 }
 
-/* SCROLL EFFECT */
+.flash-text{
+display:inline-block;
+padding:10px;
+animation:scrollText 10s linear infinite;
+}
 
-@keyframes flashMove{
+@keyframes scrollText{
 0%{transform:translateX(100%);}
 100%{transform:translateX(-100%);}
 }
