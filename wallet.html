@@ -13,33 +13,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body onload="loadWallet()">
 
-<div class="container">
+<div class="wallet-container">
 
-<h2>My Wallet</h2>
-
+<!-- BALANCE CARD -->
 <div class="wallet-card">
+    <p class="wallet-title">TOTAL COINS</p>
+    <h1 id="balance">🪙 0</h1>
 
-<h3>Total Balance</h3>
+    <div class="wallet-row">
+        <div>
+            <p>Deposit</p>
+            <h3 id="deposit">🪙 0</h3>
+        </div>
 
-<h1>🪙 <span id="balance">0</span></h1>
-
+        <div>
+            <p>Winnings</p>
+            <h3 id="winnings">🪙 0</h3>
+        </div>
+    </div>
 </div>
 
-
-<div class="wallet-buttons">
-
-<button onclick="addMoney()">Add Coins</button>
-
-<button onclick="withdraw()">Withdraw</button>
-
+<!-- ACTION BUTTONS -->
+<div class="wallet-actions">
+    <button class="add-btn" onclick="addMoney()">+ ADD COINS</button>
+    <button class="withdraw-btn">⬇ WITHDRAW</button>
 </div>
 
+<!-- TRANSACTIONS -->
+<h3 class="tx-title">Recent Transactions</h3>
 
-<div class="history">
-
-<h3>Transaction History</h3>
-
-<div id="history"></div>
+<div id="history" class="tx-list"></div>
 
 </div>
 
