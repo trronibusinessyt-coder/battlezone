@@ -699,11 +699,23 @@ let currentMap = "all";
 
 function setType(type){
   currentType = type;
+
+  document.querySelectorAll(".rank-filters button")
+  .forEach(btn=>btn.classList.remove("active"));
+
+  event.target.classList.add("active");
+
   loadRank();
 }
 
 function setMap(map){
   currentMap = map;
+
+  document.querySelectorAll(".map-filters button")
+  .forEach(btn=>btn.classList.remove("active"));
+
+  event.target.classList.add("active");
+
   loadRank();
 }
 
