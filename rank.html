@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rank</title>
+<title>Leaderboard</title>
+
 <link rel="stylesheet" href="style.css">
 
 <link rel="stylesheet"
@@ -11,18 +12,49 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </head>
 
-<body onload="checkLogin()">
+<body onload="checkLogin(); loadRank()">
 
-<div class="container">
-<h2>Top Players</h2>
-
-<div class="card">
-<p>1. ProPlayerX - 1500 pts</p>
-<p>2. GamerKing - 1200 pts</p>
-<p>3. BattleHero - 1000 pts</p>
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="profile">
+    <img src="https://i.imgur.com/6VBx3io.png">
+    <div>
+      <h3 class="profile-name">BattleZone</h3>
+      <p class="profile-sub">LEADERBOARD</p>
+    </div>
+  </div>
 </div>
+
+<!-- FILTER -->
+<div class="rank-filters">
+  <button onclick="setType('weekly')" class="active">Weekly</button>
+  <button onclick="setType('monthly')">Monthly</button>
+  <button onclick="setType('lifetime')">Lifetime</button>
 </div>
 
+<!-- MAP FILTER -->
+<div class="map-filters">
+  <button onclick="setMap('all')" class="active">All</button>
+  <button onclick="setMap('full')">FF FULL MAP</button>
+  <button onclick="setMap('survival')">FF SURVIVAL</button>
+  <button onclick="setMap('lonewolf')">LONE WOLF</button>
+</div>
+
+<!-- TOP 3 -->
+<div class="top3">
+
+  <div class="player second" id="rank2"></div>
+
+  <div class="player first" id="rank1"></div>
+
+  <div class="player third" id="rank3"></div>
+
+</div>
+
+<!-- LIST -->
+<div id="rankList"></div>
+
+<!-- BOTTOM NAV -->
 <div class="bottom-nav">
 
 <a href="offers.html" class="nav-btn">
@@ -52,8 +84,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </div>
 
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
-
 </html>
