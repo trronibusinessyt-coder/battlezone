@@ -585,9 +585,9 @@ setTimeout(animateBalance,500);
 
 /* ===== PRO INFINITE SLIDER ===== */
 
-const track = document.querySelector(".banner-track");
-const slides = document.querySelectorAll(".banner-slide");
-const dots = document.querySelectorAll(".banner-dots .dot");
+const track = document.querySelector(".hero-track");
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".h-dot");
 
 if(track){
 
