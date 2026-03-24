@@ -1310,3 +1310,49 @@ animation:scrollText 15s linear infinite;
 margin:0 12px;
 opacity:0.3;
 }
+
+.topbar-pro{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px;
+background:linear-gradient(90deg,#0a0a0a,#1a0000,#0a0a0a);
+border-bottom:1px solid rgba(255,120,0,0.2);
+}
+
+/* CENTER ONLINE */
+.online-center{
+display:flex;
+align-items:center;
+gap:6px;
+background:rgba(255,255,255,0.05);
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+color:#fff;
+}
+
+/* DOT */
+.dot{
+width:8px;
+height:8px;
+background:#00ff9d;
+border-radius:50%;
+box-shadow:0 0 8px #00ff9d;
+}
+
+/* RIGHT */
+.top-right{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* COINS */
+.coins-box{
+background:linear-gradient(90deg,#ff7b00,#ff3d00);
+padding:6px 12px;
+border-radius:20px;
+font-weight:bold;
+box-shadow:0 0 10px #ff3d00;
+}
