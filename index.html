@@ -1,110 +1,198 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BattleZone</title>
+<title>BattleZone Esports</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- 🔥 LOADER -->
+<div id="loader">
+  <img src="images/logo.png" class="loader-logo">
+  <h2 class="loader-text">BattleZone</h2>
+  <p class="loader-sub">Loading Arena...</p>
+</div>
+
 <!-- 🔥 TOP BAR -->
-<div class="topbar">
-  <div class="logo-box">
-    <img src="images/logo.png">
+<div class="topbar-pro">
+
+  <div class="top-left">
+    <img src="images/logo.png" class="logo">
     <div>
-      <h2>BattleZone</h2>
-      <p>Free Fire Tournaments</p>
+      <h2>BATTLEZONE</h2>
+      <p>FREE FIRE TOURNAMENTS</p>
     </div>
   </div>
 
-  <div class="top-actions">
-    <i class="fa-solid fa-bell"></i>
-    <div class="wallet-chip">🪙 4250</div>
+  <div class="online-center">
+    <span class="dot"></span>
+    <span>1,248 Online</span>
+  </div>
+
+  <div class="top-right">
+    <div class="icon-btn">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+
+    <div class="coins-box">
+      🪙 <b id="topBalance">0</b>
+    </div>
+  </div>
+
+</div>
+
+<!-- 🔥 HOT BAR -->
+<div class="hot-flash">
+  <div class="flash-tag">🔥 HOT NOW</div>
+  <div class="flash-scroll">
+    <div class="flash-track">
+      ⚡ 1,420 Players Online • 🔴 245 Live Tournaments • 💰 1 Lakh+ Prize Pools
+    </div>
   </div>
 </div>
 
-<!-- 🔥 MAIN CONTAINER -->
-<div class="main-container">
+<!-- 🔥 HERO BANNER -->
+<div class="hero-banner">
 
-<!-- 🔥 BANNER -->
-<div class="banner">
-  <h1>GEAR UP.<br> BATTLE HARD.</h1>
-  <p>Play tournaments & win coins</p>
+  <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d5">
+
+  <div class="hero-overlay">
+    <h1>GEAR UP.</h1>
+    <h2>BATTLE HARD.</h2>
+    <p>Compete & win big everyday</p>
+  </div>
+
 </div>
 
-<!-- 🔥 QUICK MENU -->
-<div class="quick-menu">
-  <div class="q-btn">Join</div>
-  <div class="q-btn">Create</div>
-  <div class="q-btn">Leaderboard</div>
-  <div class="q-btn">Matches</div>
+<!-- ⚡ QUICK ACTION -->
+<div class="quick-grid">
+
+  <a href="rules.html" class="quick-card">
+    📜
+    <span>Rules</span>
+  </a>
+
+  <a href="support.html" class="quick-card">
+    🎧
+    <span>Support</span>
+  </a>
+
+  <a href="https://chat.whatsapp.com/ABCDE12345xyz" class="quick-card">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+
+  <a href="https://youtube.com/" class="quick-card">
+    <i class="fa-brands fa-youtube"></i>
+    <span>YouTube</span>
+  </a>
+
+  <a href="wallet.html" class="quick-card">
+    💰
+    <span>Wallet</span>
+  </a>
+
+  <div class="quick-card highlight">
+    🎉
+    <span>Refer</span>
+  </div>
+
 </div>
 
 <!-- 🔥 FEATURED -->
-<h3 class="section-title">🔥 Featured</h3>
+<div class="section-title">🔥 FEATURED TOURNAMENTS</div>
 
-<div class="cards">
+<div class="featured-wrap">
 
-  <div class="card">
-    <img src="images/map1.jpg">
-    <h3>Battle Royale</h3>
-    <p>Entry: 🪙29</p>
-    <button>PLAY</button>
+  <div class="featured-card">
+    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5">
+    <div class="tag">FULL MAP</div>
+
+    <div class="f-content">
+      <h3>Battle Royale Clash</h3>
+      <p>96/100 • 6:00 PM</p>
+
+      <div class="f-bottom">
+        <span>₹29</span>
+        <button>PLAY</button>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <img src="images/map2.jpg">
-    <h3>Lone Wolf</h3>
-    <p>Entry: 🪙9</p>
-    <button>PLAY</button>
+  <div class="featured-card">
+    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420">
+    <div class="tag purple">LONE WOLF</div>
+
+    <div class="f-content">
+      <h3>1v1 Ultra Fight</h3>
+      <p>32/32 • 8:30 PM</p>
+
+      <div class="f-bottom">
+        <span>₹9</span>
+        <button>PLAY</button>
+      </div>
+    </div>
   </div>
 
 </div>
 
-<!-- 🔥 MY CONTESTS -->
-<h3 class="section-title">🔥 My Contests</h3>
+<!-- 🔥 TOURNAMENT LIST -->
+<div id="tournamentList"></div>
 
-<div class="contest-box">
+<!-- 📊 MY CONTEST -->
+<div class="section-title">MY CONTESTS</div>
 
-  <div class="contest-card">
-    <i class="fa-solid fa-clock"></i>
+<div class="contest-grid">
+
+  <div class="contest-box blue">
+    ⏳
     <p>Upcoming</p>
   </div>
 
-  <div class="contest-card">
-    <i class="fa-solid fa-play"></i>
+  <div class="contest-box red">
+    🔴
     <p>Ongoing</p>
   </div>
 
-  <div class="contest-card">
-    <i class="fa-solid fa-check"></i>
+  <div class="contest-box green">
+    ✅
     <p>Completed</p>
   </div>
 
 </div>
 
-</div>
-
-<!-- 🔥 BOTTOM NAV -->
+<!-- 🔻 BOTTOM NAV -->
 <div class="bottom-nav">
 
-<a href="#"><i class="fa-solid fa-trophy"></i></a>
-<a href="#"><i class="fa-solid fa-ranking-star"></i></a>
+  <a href="offers.html" class="nav-btn">
+    <i class="fa-solid fa-percent"></i>
+  </a>
 
-<a href="#" class="active">
-<i class="fa-solid fa-house"></i>
-</a>
+  <a href="rank.html" class="nav-btn">
+    <i class="fa-solid fa-ranking-star"></i>
+  </a>
 
-<a href="#"><i class="fa-solid fa-wallet"></i></a>
-<a href="#"><i class="fa-solid fa-user"></i></a>
+  <a href="index.html" class="nav-btn active">
+    <i class="fa-solid fa-house"></i>
+  </a>
+
+  <a href="wallet.html" class="nav-btn">
+    <i class="fa-solid fa-wallet"></i>
+  </a>
+
+  <a href="profile.html" class="nav-btn">
+    <i class="fa-solid fa-user"></i>
+  </a>
 
 </div>
+
+<script type="module" src="app.js"></script>
 
 </body>
 </html>
